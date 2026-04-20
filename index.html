@@ -369,31 +369,30 @@
                 <h2>Get in touch with us</h2>
             </div>
             <div class="contact-form-container">
-                <form class="contact-form"
-                    onsubmit="event.preventDefault(); alert('Thank you for choosing Labourites. We\'ll get back to you shortly!');">
+                <form class="contact-form" id="lead-form">
                     <div class="form-group">
                         <label>Full name</label>
-                        <input type="text" placeholder="Enter your name here" required>
+                        <input type="text" name="full_name" placeholder="Enter your name here" required>
                     </div>
                     <div class="form-group">
                         <label>Company name</label>
-                        <input type="text" placeholder="Enter company name here">
+                        <input type="text" name="company_name" placeholder="Enter company name here">
                     </div>
                     <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" placeholder="Enter your email here" required>
+                        <input type="email" name="email" placeholder="Enter your email here" required>
                     </div>
                     <div class="form-group">
                         <label>Mobile number</label>
-                        <input type="tel" placeholder="Enter your number here" required>
+                        <input type="tel" name="mobile_number" placeholder="Enter your number here" required>
                     </div>
                     <div class="form-group">
                         <label>Remarks / Question</label>
-                        <input type="text" placeholder="Tell us more...">
+                        <input type="text" name="remarks" placeholder="Tell us more...">
                     </div>
                     <div class="form-group">
                         <label>Service required</label>
-                        <select required>
+                        <select name="service_required" required>
                             <option value="">Pick one</option>
                             <option>Flexible Desk</option>
                             <option>Dedicated Desk</option>
@@ -404,6 +403,7 @@
                         </select>
                     </div>
                     <div class="form-submit">
+                        <div id="form-message" class="form-message"></div>
                         <button type="submit" class="btn btn-submit-form">Send Query</button>
                     </div>
                 </form>
@@ -435,7 +435,7 @@
         <div class="footer-col">
             <h4>Address</h4>
             <p><a href="https://maps.app.goo.gl/P947mp1ArXs4jzXK9" class="social-link" target="_blank"
-                    rel="noopener">Plazza #68, 26-A Lavendar Road, Sector-H Commercial, DHA-2, Islamabad</a></p>
+                    rel="noopener">Plazza #68, 26-A Lavendar Road, Sector-H Commercial, DHA-2, Islamabad.</a></p>
 
         </div>
     </footer>
@@ -443,7 +443,9 @@
         <p>Copyright © 2026 LABOURITES.</p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

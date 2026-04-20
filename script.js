@@ -67,3 +67,86 @@ if (pricingSwitch) {
         }
     });
 }
+
+// Supabase Configuration
+const SUPABASE_URL = 'https://jaldxqqplawmexwbpark.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImphbGR4cXFwbGF3bWV4d2JwYXJrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY2Nzg1NTIsImV4cCI6MjA5MjI1NDU1Mn0.d2H-P4i3xtsm2X0N9spJzyk3S652HAbZG0Us6GcHr9o';
+
+// Initialize Supabase Client
+let supabaseClient;
+if (typeof supabase !== 'undefined') {
+    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+} else {
+    console.error('Supabase library not loaded! Make sure the CDN script in index.html is working.');
+}
+
+// Form Submission Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const leadForm = document.getElementById('lead-form');
+    const formMessage = document.getElementById('form-message');
+    
+    if (leadForm) {
+        const submitBtn = leadForm.querySelector('button[type="submit"]');
+
+        leadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!supabaseClient) {
+                formMessage.innerText = 'System error: Database client not initialized.';
+                formMessage.className = 'form-message error';
+                return;
+            }
+
+            // Set loading state
+            submitBtn.disabled = true;
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            formMessage.innerText = '';
+            formMessage.className = 'form-message';
+
+            // Get form data
+            const formData = new FormData(leadForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                if (value) data[key] = value;
+            });
+
+            console.log('Attempting to submit to Supabase:', data);
+
+            try {
+                const { data: responseData, error } = await supabaseClient
+                    .from('leads')
+                    .insert([data]);
+
+                if (error) {
+                    console.error('Supabase Insert Error:', error);
+                    throw error;
+                }
+
+                console.log('Submission successful:', responseData);
+
+                // Success
+                formMessage.innerText = "Thank you for choosing Labourites. We'll get back to you shortly!";
+                formMessage.className = 'form-message success';
+                leadForm.reset();
+            } catch (error) {
+                // Detailed Error
+                console.error('Full Error Object:', error);
+                
+                let errorMsg = 'Oops! Something went wrong.';
+                if (error.code === '42501') {
+                    errorMsg = 'Permission denied (RLS). Please enable INSERT policies for the anon role in Supabase.';
+                } else if (error.message) {
+                    errorMsg = `Error: ${error.message}`;
+                }
+                
+                formMessage.innerText = errorMsg;
+                formMessage.className = 'form-message error';
+            } finally {
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+            }
+        });
+    }
+});

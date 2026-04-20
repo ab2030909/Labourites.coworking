@@ -1117,3 +1117,29 @@ input:checked + .slider:before {
         animation: none;
     }
 }
+
+/* Form Feedback Messages */
+.form-message {
+    font-size: 0.9rem;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    font-weight: 500;
+}
+
+.form-message.success {
+    display: block;
+    color: #2e7d32;
+    background-color: #e8f5e9;
+}
+
+.form-message.error {
+    display: block;
+    color: #c62828;
+    background-color: #ffebee;
+}
+
+.form-submit {
+    align-items: center;
+}
