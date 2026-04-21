@@ -1,0 +1,15 @@
+{
+  "name": "labourites-coworking",
+  "version": "1.0.0",
+  "description": "Labourites Co-Working Space website",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": ["coworking", "workspace"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  }
+}
