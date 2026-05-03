@@ -1000,6 +1000,17 @@ input:checked + .slider:before {
     .hero h1 {
         font-size: 3rem;
     }
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .hero-logo img {
+        width: 140px;
+    }
     .about-wrapper, .how-to-start {
         flex-direction: column;
     }
@@ -1008,6 +1019,9 @@ input:checked + .slider:before {
     }
     .start-image {
         min-height: 300px;
+    }
+    .start-image img.building-img {
+        border-radius: 0;
     }
     .why-features {
         flex-direction: column;
