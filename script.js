@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabContents = document.querySelectorAll('.tab-content');
     const offeringsSection = document.getElementById('offerings');
 
+    // Preload all tab background images so they're cached before user clicks
+    tabs.forEach(tab => {
+        const bgImage = tab.getAttribute('data-bg');
+        if (bgImage) {
+            const img = new Image();
+            img.src = bgImage;
+        }
+    });
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             // Remove active class from all tabs
