@@ -1067,7 +1067,7 @@ input:checked + .slider:before {
         margin-bottom: 40px;
     }
     .cards.cards-centered {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
     .cards.cards-single .card {
         width: 100%;
@@ -1083,7 +1083,7 @@ input:checked + .slider:before {
         padding-left: 20px;
         padding-right: 20px;
     }
-    .cards, .pricing-cards, .pricing-cards.four-cols {
+    .cards, .cards.cards-centered, .pricing-cards, .pricing-cards.four-cols {
         grid-template-columns: 1fr;
         gap: 32px;
     }
