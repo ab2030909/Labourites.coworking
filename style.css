@@ -3932,6 +3932,68 @@ body.modal-open {
     transform: scale(1);
 }
 
+/* "+N more" overlay on the 3rd tile when there are extra hidden images */
+.gp-tile.gp-tile-more::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 5, 8, 0.6);
+    opacity: 1;
+    z-index: 2;
+}
+
+.gp-tile.gp-tile-more .gp-more-count {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    color: var(--white);
+    font-family: 'Koulen', sans-serif;
+    pointer-events: none;
+    transition: transform 0.4s ease;
+}
+
+.gp-tile.gp-tile-more:hover .gp-more-count {
+    transform: scale(1.05);
+}
+
+.gp-tile.gp-tile-more .gp-more-count strong {
+    font-size: 3.5rem;
+    line-height: 0.85;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.gp-tile.gp-tile-more .gp-more-count span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+/* Hide caption on the +N tile, since the count is the focus */
+.gp-tile.gp-tile-more figcaption {
+    display: none;
+}
+
+.gp-tile.gp-tile-more::after {
+    /* Keep the magnifier subtle but visible by default */
+    opacity: 1;
+    transform: scale(1);
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--white);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: none;
+}
+
 /* ----- Closing CTA ----- */
 .gp-cta {
     padding: 80px 0;

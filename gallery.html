@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -58,7 +58,7 @@
                 <p>Dynamic and flexible work areas designed to inspire focus, creativity, and collaboration. From hot desks to dedicated workstations, our coworking environment adapts to your workflow.</p>
                 <div class="gp-side-deco"></div>
             </aside>
-            <div class="gp-grid gp-grid-4">
+            <div class="gp-grid gp-grid-3">
                 <figure class="gp-tile">
                     <img src="assets/images/kamgah1.jpg" alt="Open Coworking" loading="lazy">
                     <figcaption>Open Coworking</figcaption>
@@ -143,7 +143,7 @@
                 <p>A versatile and elegant space ideal for workshops, seminars, corporate events, product launches, and networking sessions.</p>
                 <div class="gp-side-deco"></div>
             </aside>
-            <div class="gp-grid gp-grid-4">
+            <div class="gp-grid gp-grid-3">
                 <figure class="gp-tile">
                     <img src="assets/images/event-hall-bg.jpg" alt="Studio '68" loading="lazy">
                     <figcaption>Studio '68</figcaption>
@@ -228,7 +228,7 @@
                 <p>Snapshots of collaboration, networking, productivity, and community building at LABOURITES.</p>
                 <div class="gp-side-deco"></div>
             </aside>
-            <div class="gp-grid gp-grid-4">
+            <div class="gp-grid gp-grid-3">
                 <figure class="gp-tile">
                     <img src="assets/images/kamgah1.jpg" alt="Collaboration" loading="lazy">
                     <figcaption>Collaboration</figcaption>
@@ -305,6 +305,26 @@
 
     <script src="script.js"></script>
     <script>
+        // Limit each grid to 3 visible tiles; mark 3rd tile with "+N" if there are more
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.gp-grid').forEach(grid => {
+                const tiles = Array.from(grid.querySelectorAll('.gp-tile'));
+                if (tiles.length <= 3) return;
+
+                // Hide tiles 4 and onward
+                tiles.slice(3).forEach(t => t.style.display = 'none');
+
+                // Add +N overlay to the 3rd tile (index 2)
+                const thirdTile = tiles[2];
+                const extraCount = tiles.length - 3;
+                thirdTile.classList.add('gp-tile-more');
+                const countDiv = document.createElement('div');
+                countDiv.className = 'gp-more-count';
+                countDiv.innerHTML = '<strong>+' + extraCount + '</strong><span>More Photos</span>';
+                thirdTile.appendChild(countDiv);
+            });
+        });
+
         // Lightbox
         document.addEventListener('DOMContentLoaded', () => {
             const items = Array.from(document.querySelectorAll('.gp-tile'));
@@ -338,7 +358,22 @@
             const next = () => open((currentIndex + 1) % items.length);
             const prev = () => open((currentIndex - 1 + items.length) % items.length);
 
-            items.forEach((item, idx) => item.addEventListener('click', () => open(idx)));
+            items.forEach((item, idx) => {
+                item.addEventListener('click', () => {
+                    // If this is a "+N" tile, jump to the first hidden image (index 3 within its section)
+                    if (item.classList.contains('gp-tile-more')) {
+                        // The first hidden tile is the next sibling within the same grid
+                        const grid = item.closest('.gp-grid');
+                        const allInGrid = Array.from(grid.querySelectorAll('.gp-tile'));
+                        const hiddenStart = allInGrid[3]; // 4th tile in this grid
+                        if (hiddenStart) {
+                            const targetIdx = items.indexOf(hiddenStart);
+                            if (targetIdx !== -1) return open(targetIdx);
+                        }
+                    }
+                    open(idx);
+                });
+            });
             closeBtn.addEventListener('click', close);
             nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
             prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
