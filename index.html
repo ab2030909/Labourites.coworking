@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,6 +30,7 @@
                 <li><a href="#offerings">Our Offerings</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#contact" class="btn btn-outline">Contact us</a>
@@ -87,21 +88,23 @@
                 <button class="tab" data-target="cafe-68" data-bg="assets/images/cafe-bg.jpg">Café 68</button>
             </div>
 
-            <div class="tab-contents-wrapper">
+                        <div class="tab-contents-wrapper">
                 <!-- KaamGah1 Content -->
                 <div class="tab-content active" id="kaamgah1">
                     <div class="cards cards-centered">
-                        <div class="card">
+                        <div class="card" data-modal="hot-desks">
                             <span class="card-label">Daily plans</span>
                             <h3>Hot Desks</h3>
                             <p>Choose a desk based on their needs for the day. Book, turn up and find a work space
                                 that's convenient for you.</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
-                        <div class="card">
+                        <div class="card" data-modal="dedicated-desk">
                             <span class="card-label">Monthly plans</span>
                             <h3>Dedicated Desk</h3>
                             <p>Get a private workspace that is permanently assigned to you, complete with storage for
                                 your belongings and equipment.</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -109,17 +112,19 @@
                 <!-- KaamGah2 Content -->
                 <div class="tab-content" id="kaamgah2">
                     <div class="cards cards-centered">
-                        <div class="card">
+                        <div class="card" data-modal="private-offices">
                             <span class="card-label">Team plans</span>
                             <h3>Private Offices</h3>
                             <p>Rent a lockable space with walls and doors, offering a separate and confidential setting
                                 for focused work for short term, or longer term.</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
-                        <div class="card">
+                        <div class="card" data-modal="day-offices">
                             <span class="card-label">Team plans</span>
                             <h3>Day Offices</h3>
                             <p>Rent an office for a day or two when you or your team need to focus. These are fully
                                 serviced enclosed spaces to get straight down to work.</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -127,17 +132,19 @@
                 <!-- Meeting Rooms Content -->
                 <div class="tab-content" id="meeting-rooms">
                     <div class="cards cards-centered">
-                        <div class="card">
+                        <div class="card" data-modal="meeting-rooms-modal">
                             <span class="card-label">Flexible plans</span>
                             <h3>Meeting Rooms</h3>
                             <p>Get a private and distraction-free environment for discussions and presentations to
                                 facilitate team collaboration.</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
-                        <div class="card">
+                        <div class="card" data-modal="focus-pod">
                             <span class="card-label">Flexible plans</span>
                             <h3>Focus Pod</h3>
                             <p>Rent a focus pod if you're looking to host a corporate meeting, brainstorming sessions,
                                 and client meetings.</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -145,30 +152,171 @@
                 <!-- Studio 68 Content -->
                 <div class="tab-content" id="studio-68">
                     <div class="cards cards-single">
-                        <div class="card">
+                        <div class="card" data-modal="studio-68-modal">
                             <span class="card-label">Flexible plans</span>
-                            <h3>Studio ‘68</h3>
-                            <p>Whatever the event, large or small, we can deliver. So whether you’re hosting a product
-                                launch, evening event or an all-day company celebration, we’ll be there to help it run
-                                smoothly – fully catered and supported.</p>
+                            <h3>Studio '68</h3>
+                            <p>Whatever the event, large or small, we can deliver. So whether you're hosting a product
+                                launch, evening event or an all-day company celebration, we'll be there to help it run
+                                smoothly - fully catered and supported.</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <div class="tab-content" id="cafe-68">
                     <div class="cards cards-single">
-                        <div class="card">
+                        <div class="card" data-modal="cafe-68-modal">
                             <span class="card-label">Relax while you work</span>
-                            <h3>Café ‘68</h3>
-                            <p>State of the Art Coffee Shop to entertain your clients, guests, and colleagues.<br>We
+                            <h3>Cafe '68</h3>
+                            <p>State of the Art Coffee Shop to entertain your clients, guests, and colleagues. We
                                 offer discounted prices on all items for our members, so you enjoy productivity without
                                 worrying about budget!</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Offering Modals -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-box">
+            <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+            <div class="modal-content" id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Modal Templates -->
+    <template id="modal-hot-desks">
+        <span class="modal-label">Daily Plans - KaamGah1</span>
+        <h2>Hot Desks</h2>
+        <p class="modal-intro">The perfect solution for professionals who need a great workspace without a long-term commitment. Show up, plug in, and get to work.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Flexible daily booking - no long-term contract required</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Access to high-speed business-grade WiFi and LAN</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Ergonomic seating and well-lit, professional environment</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Access to shared pantry, printing, and reception services</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Discounted rates at Cafe '68 for all members</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Secure access and 24/7 power backup included</span></div>
+        </div>
+        <p class="modal-note">Ideal for freelancers, remote workers, and visiting professionals looking for a productive space by the day.</p>
+        <a href="#contact" class="modal-cta">Book a Tour <i class="fas fa-arrow-right"></i></a>
+    </template>
+
+    <template id="modal-dedicated-desk">
+        <span class="modal-label">Monthly Plans - KaamGah1</span>
+        <h2>Dedicated Desk</h2>
+        <p class="modal-intro">Your own permanent desk in a vibrant coworking environment. Everything stays exactly where you left it - every single day.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Permanently assigned desk - yours and only yours</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Dedicated lockable storage cabinet for your belongings</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed WiFi and LAN connection at your desk</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Meeting room credits included with monthly plan</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Access to all shared amenities and community events</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Business address facility available as an add-on</span></div>
+        </div>
+        <p class="modal-note">Best suited for individuals and solo professionals who want the consistency of a private desk with the energy of a coworking space.</p>
+        <a href="#contact" class="modal-cta">Book a Tour <i class="fas fa-arrow-right"></i></a>
+    </template>
+
+    <template id="modal-private-offices">
+        <span class="modal-label">Team Plans - KaamGah2</span>
+        <h2>Private Offices</h2>
+        <p class="modal-intro">Fully enclosed, lockable private offices for teams that need focus, confidentiality, and a professional base of operations.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Secure, lockable office with walls and doors</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available for teams of 4, 6, 7, and 16 persons</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Customizable layout to suit your team's workflow</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Dedicated lockers and high-speed internet for every seat</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Business address and mail handling included</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Reception support and uninterrupted power backup</span></div>
+        </div>
+        <p class="modal-note">Perfect for growing startups, established teams, and enterprises that need a private, professional space on flexible terms.</p>
+        <a href="#contact" class="modal-cta">Book a Tour <i class="fas fa-arrow-right"></i></a>
+    </template>
+
+    <template id="modal-day-offices">
+        <span class="modal-label">Team Plans - KaamGah2</span>
+        <h2>Day Offices</h2>
+        <p class="modal-intro">Need a private space for a day or two? Day Offices give your team a fully serviced, enclosed environment to focus and deliver.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Book for a single day or multiple days as needed</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Fully enclosed and private - no distractions</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed internet and power backup included</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Suitable for team sprints, client visits, and workshops</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Access to shared amenities and pantry services</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available on-demand based on availability</span></div>
+        </div>
+        <p class="modal-note">Great for teams that occasionally need a private space without committing to a full monthly office plan.</p>
+        <a href="#contact" class="modal-cta">Book a Tour <i class="fas fa-arrow-right"></i></a>
+    </template>
+
+    <template id="modal-meeting-rooms-modal">
+        <span class="modal-label">Flexible Plans - Meeting Rooms</span>
+        <h2>Meeting Rooms</h2>
+        <p class="modal-intro">Professional, distraction-free meeting rooms equipped with everything you need to run productive discussions, presentations, and client calls.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available for members and non-members by the hour</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed internet and display screen included</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Whiteboard, markers, and stationery provided</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Comfortable seating for up to 10 participants</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Reception support and visitor management</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Easy online booking with flexible time slots</span></div>
+        </div>
+        <p class="modal-note">Ideal for client meetings, team reviews, interviews, and any professional gathering that demands a polished setting.</p>
+        <a href="#contact" class="modal-cta">Book a Room <i class="fas fa-arrow-right"></i></a>
+    </template>
+
+    <template id="modal-focus-pod">
+        <span class="modal-label">Flexible Plans - Meeting Rooms</span>
+        <h2>Focus Pod</h2>
+        <p class="modal-intro">A compact, private pod designed for focused one-on-one meetings, quick calls, and confidential conversations without interruption.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Intimate setting for 2 to 4 people</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Soundproofed for complete privacy</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed WiFi and power outlets at every seat</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Perfect for video calls, interviews, and brainstorming</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Bookable by the hour - members get priority access</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available to non-members based on availability</span></div>
+        </div>
+        <p class="modal-note">When you need a quiet corner to think, plan, or connect - the Focus Pod delivers exactly that.</p>
+        <a href="#contact" class="modal-cta">Book a Pod <i class="fas fa-arrow-right"></i></a>
+    </template>
+
+    <template id="modal-studio-68-modal">
+        <span class="modal-label">Flexible Plans - Studio 68</span>
+        <h2>Studio '68</h2>
+        <p class="modal-intro">A premium multipurpose event hall built for corporate and social occasions of all sizes. Whatever the event, Studio '68 delivers.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Spacious hall suitable for 20 to 150+ guests</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Modern AV setup - projector, screen, and sound system</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Flexible layout for seminars, launches, and networking</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Catering coordination available through Cafe '68</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Dedicated event support staff on the day</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed internet and uninterrupted power throughout</span></div>
+        </div>
+        <p class="modal-note">From product launches and corporate workshops to private celebrations - Studio '68 is the venue that makes every event memorable.</p>
+        <a href="#contact" class="modal-cta">Enquire Now <i class="fas fa-arrow-right"></i></a>
+    </template>
+
+    <template id="modal-cafe-68-modal">
+        <span class="modal-label">Relax While You Work - Cafe 68</span>
+        <h2>Cafe '68</h2>
+        <p class="modal-intro">A state-of-the-art in-house cafe where great coffee meets great company. The perfect place to recharge, entertain clients, or simply take a break.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Premium coffee, teas, and a full food menu</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Exclusive member discounts on all items</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Comfortable lounge seating for informal meetings</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>WiFi available throughout the cafe area</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Catering services available for events at Studio '68</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Open to members, guests, and walk-in visitors</span></div>
+        </div>
+        <p class="modal-note">More than just a cafe - it's where ideas flow, deals are made, and the LABOURITES community comes together.</p>
+        <a href="#contact" class="modal-cta">Visit Us <i class="fas fa-arrow-right"></i></a>
+    </template>
+
+    <!-- How to get started Section -->
 
     <!-- How to get started Section -->
     <section class="how-to-start">
@@ -424,6 +572,233 @@
                         <button type="submit" class="btn btn-submit-form">Send Query</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- Partners / Trusted By Section -->
+    <section class="partners">
+        <div class="partners-header">
+            <span class="partners-label"><i class="fas fa-handshake"></i> Trusted Partners</span>
+            <h2>Backed by the best in the business</h2>
+        </div>
+
+        <div class="partners-marquee">
+            <div class="partners-track">
+                <!-- Set 1 -->
+                <div class="partner-logo"><span>BRAND<strong>ONE</strong></span></div>
+                <div class="partner-logo"><span>NOVA<strong>CORP</strong></span></div>
+                <div class="partner-logo"><span>PEAK<strong>WORKS</strong></span></div>
+                <div class="partner-logo"><span>ATLAS<strong>GROUP</strong></span></div>
+                <div class="partner-logo"><span>ZENITH<strong>HUB</strong></span></div>
+                <!-- Set 2 (duplicate for seamless loop) -->
+                <div class="partner-logo" aria-hidden="true"><span>BRAND<strong>ONE</strong></span></div>
+                <div class="partner-logo" aria-hidden="true"><span>NOVA<strong>CORP</strong></span></div>
+                <div class="partner-logo" aria-hidden="true"><span>PEAK<strong>WORKS</strong></span></div>
+                <div class="partner-logo" aria-hidden="true"><span>ATLAS<strong>GROUP</strong></span></div>
+                <div class="partner-logo" aria-hidden="true"><span>ZENITH<strong>HUB</strong></span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="faq-inner">
+
+                <!-- Left Sidebar -->
+                <div class="faq-sidebar">
+                    <span class="faq-label"><i class="fas fa-circle-question"></i> FAQ</span>
+                    <h2>Your Questions,<br><span>Answered.</span></h2>
+                    <p>Everything you need to know about LABOURITES — from workspace options and amenities to booking and membership plans.</p>
+                    <a href="#contact" class="faq-sidebar-cta">
+                        Ask Us Anything <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+                <!-- Right Accordion -->
+                <div class="faq-list">
+
+                    <div class="faq-item active">
+                        <button class="faq-question" aria-expanded="true">
+                            <div class="faq-question-left">
+                                <span class="faq-num">01</span>
+                                <span class="faq-question-text">What is LABOURITES?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer open">
+                            <div class="faq-answer-inner">
+                                <p>LABOURITES is a premium coworking and business address in Islamabad, designed for professionals, entrepreneurs, and enterprises seeking a refined, productive, and fully supported workspace environment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">02</span>
+                                <span class="faq-question-text">Where is LABOURITES located?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>LABOURITES is strategically located at Plaza #68, DHA Phase 2, Islamabad — offering excellent connectivity to Islamabad Expressway and GT Road, within a prime commercial district.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">03</span>
+                                <span class="faq-question-text">What workspace solutions do you offer?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>We provide a curated range of workspace solutions including Hot Desks, Dedicated Desks, Private Offices, Day Offices, Virtual Offices, Meeting Rooms, and Event Spaces — each designed with flexibility and professionalism in mind.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">04</span>
+                                <span class="faq-question-text">Can I view the space before becoming a member?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes. We encourage prospective members to schedule a private tour to experience our environment, facilities, and services firsthand before making a decision.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">05</span>
+                                <span class="faq-question-text">Do you offer flexible membership plans?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Our membership plans are designed with flexibility in mind, offering daily, monthly, and long-term options to accommodate evolving business requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">06</span>
+                                <span class="faq-question-text">What amenities are included in membership?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Members enjoy access to high-speed business-grade internet, uninterrupted power backup, meeting facilities, ergonomic workstations, pantry services, reception support, and secure access systems.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">07</span>
+                                <span class="faq-question-text">Is LABOURITES suitable for startups and independent professionals?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Absolutely. LABOURITES is designed to support freelancers, startups, remote professionals, and scaling businesses seeking a prestigious and efficient working environment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">08</span>
+                                <span class="faq-question-text">Do you offer private office spaces for teams?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes. Our fully serviced private offices provide secure, lockable, and customizable spaces for teams requiring privacy, focus, and operational efficiency.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">09</span>
+                                <span class="faq-question-text">What is a virtual office service?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Our virtual office solution provides businesses with a prestigious commercial address in Islamabad, along with mail handling and access to meeting rooms — ideal for remote or expanding companies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">10</span>
+                                <span class="faq-question-text">Can meeting rooms be booked without membership?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes. Our meeting and conference rooms are available on-demand, allowing non-members to book professional spaces based on availability.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <div class="faq-question-left">
+                                <span class="faq-num">11</span>
+                                <span class="faq-question-text">Do you provide event or multipurpose hall facilities?</span>
+                            </div>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes. LABOURITES offers a premium multipurpose event hall designed for corporate gatherings, workshops, seminars, product launches, networking sessions, and private events. The space is fully supported with modern amenities, making it suitable for both professional and social occasions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom CTA strip -->
+                    <div class="faq-bottom">
+                        <div class="faq-bottom-text">
+                            <p>Still have a question?</p>
+                            <p>Our team is happy to help — reach out anytime.</p>
+                        </div>
+                        <a href="#contact" class="faq-bottom-btn">
+                            <i class="fas fa-envelope"></i> Contact Us
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>

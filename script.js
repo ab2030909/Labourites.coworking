@@ -159,3 +159,97 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// FAQ Accordion Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.closest('.faq-item');
+            const isOpen = item.classList.contains('active');
+            const answer = question.nextElementSibling;
+
+            // Close all other open items
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                i.querySelector('.faq-answer').classList.remove('open');
+            });
+
+            // Toggle current item
+            if (!isOpen) {
+                item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+                answer.classList.add('open');
+            }
+        });
+    });
+});
+
+// Offering Card Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('modal-overlay');
+    const modalContent = document.getElementById('modal-content');
+    const closeBtn = overlay ? overlay.querySelector('.modal-close') : null;
+
+    if (!overlay || !modalContent) return;
+
+    const openModal = (modalId) => {
+        const template = document.getElementById('modal-' + modalId);
+        if (!template) return;
+        modalContent.innerHTML = '';
+        modalContent.appendChild(template.content.cloneNode(true));
+        overlay.classList.add('active');
+        document.body.classList.add('modal-open');
+    };
+
+    const closeModal = () => {
+        overlay.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        // Clear content after animation
+        setTimeout(() => { modalContent.innerHTML = ''; }, 350);
+    };
+
+    // Open modal when clicking Read More button or anywhere on the card
+    document.querySelectorAll('.card[data-modal]').forEach(card => {
+        const modalId = card.getAttribute('data-modal');
+
+        // Click on Read More button
+        const readMoreBtn = card.querySelector('.card-read-more');
+        if (readMoreBtn) {
+            readMoreBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openModal(modalId);
+            });
+        }
+
+        // Also allow clicking the whole card (since it has cursor:pointer)
+        card.addEventListener('click', () => {
+            openModal(modalId);
+        });
+    });
+
+    // Close on close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Close when clicking overlay backdrop (not the box itself)
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // Smooth scroll & close when clicking modal CTAs that link to anchors
+    modalContent.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="#"]');
+        if (link) closeModal();
+    });
+});
