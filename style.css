@@ -97,6 +97,48 @@ ul {
     gap: 35px;
 }
 
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    z-index: 1100;
+}
+
+.nav-toggle span {
+    width: 26px;
+    height: 2.5px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.25s ease, background 0.3s ease;
+}
+
+.navbar.scrolled .nav-toggle span {
+    background: var(--text-dark);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+    background: var(--primary-color);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+    background: var(--primary-color);
+}
+
 .nav-links a {
     color: var(--white);
     font-size: 0.95rem;
@@ -1057,7 +1099,64 @@ input:checked + .slider:before {
         padding: 25px 30px;
     }
     .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        max-width: 85vw;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 100px 30px 30px;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1050;
+    }
+    .nav-links.open {
+        transform: translateX(0);
+    }
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid #f0e0e3;
+    }
+    .nav-links a {
+        color: var(--text-dark) !important;
+        display: block;
+        padding: 18px 0;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease, padding-left 0.3s ease;
+    }
+    .nav-links a:hover {
+        color: var(--primary-color) !important;
+        padding-left: 6px;
+    }
+    .nav-toggle {
+        display: flex;
+    }
+    /* Hide the contact-us pill button on mobile, drawer holds primary actions */
+    .navbar .btn-outline {
         display: none;
+    }
+    /* Backdrop when drawer is open */
+    .nav-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 5, 8, 0.5);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1040;
+    }
+    .nav-backdrop.active {
+        opacity: 1;
+        visibility: visible;
     }
     .hero h1 {
         font-size: 3rem;

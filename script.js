@@ -253,3 +253,53 @@ document.addEventListener('DOMContentLoaded', () => {
         if (link) closeModal();
     });
 });
+
+// Mobile Navigation Drawer
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (!toggle || !navLinks) return;
+
+    // Insert backdrop element
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
+    const openMenu = () => {
+        toggle.classList.add('active');
+        navLinks.classList.add('open');
+        backdrop.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+        toggle.classList.remove('active');
+        navLinks.classList.remove('open');
+        backdrop.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    };
+
+    toggle.addEventListener('click', () => {
+        if (navLinks.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    backdrop.addEventListener('click', closeMenu);
+
+    // Close when any nav link is tapped
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+            closeMenu();
+        }
+    });
+});
