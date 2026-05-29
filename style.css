@@ -1114,7 +1114,7 @@ input:checked + .slider:before {
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
         transform: translateX(100%);
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1050;
+        z-index: 1100;
     }
     .nav-links.open {
         transform: translateX(0);
@@ -1147,12 +1147,10 @@ input:checked + .slider:before {
         position: fixed;
         inset: 0;
         background: rgba(20, 5, 8, 0.5);
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
-        z-index: 1040;
+        z-index: 900;
     }
     .nav-backdrop.active {
         opacity: 1;
