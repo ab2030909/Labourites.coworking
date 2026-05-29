@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Labourites Co-Working Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/images/Capture.PNG">
+</head>
+
+<body class="gallery-page">
+
+    <!-- Navigation -->
+    <nav class="navbar gallery-nav">
+        <div class="nav-container">
+            <a href="index.html#home" class="logo">LABOURITES</a>
+            <ul class="nav-links">
+                <li><a href="index.html#offerings">Our Offerings</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html" class="active-link">Gallery</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-outline">Contact us</a>
+            <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="gallery-hero">
+        <div class="gh-bg"></div>
+        <div class="gh-content">
+            <nav class="breadcrumb gh-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Gallery</span>
+            </nav>
+            <span class="hero-tag">A Glimpse Into LABOURITES</span>
+            <h1>The <span>Gallery</span></h1>
+            <p>Explore our thoughtfully designed spaces where productivity meets comfort, collaboration, and innovation. Every corner of LABOURITES reflects a premium work culture built for modern professionals.</p>
+        </div>
+        <div class="gh-watermark">68</div>
+    </header>
+
+    <!-- Category Filter Pills -->
+    <div class="gallery-filter-wrap">
+        <div class="container">
+            <div class="gallery-filters">
+                <button class="gf-pill active" data-filter="all">All</button>
+                <button class="gf-pill" data-filter="coworking">Coworking</button>
+                <button class="gf-pill" data-filter="private">Private Offices</button>
+                <button class="gf-pill" data-filter="meetings">Meeting Rooms</button>
+                <button class="gf-pill" data-filter="events">Event Hall</button>
+                <button class="gf-pill" data-filter="lounge">Café 68 &amp; AraamGah</button>
+                <button class="gf-pill" data-filter="reception">Reception</button>
+                <button class="gf-pill" data-filter="moments">Work Culture</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Coworking Spaces ===== -->
+    <section class="gallery-section" data-category="coworking">
+        <div class="container">
+            <div class="gs-header">
+                <span class="gs-num">01</span>
+                <div>
+                    <h2>Coworking Spaces</h2>
+                    <p>Dynamic and flexible work areas designed to inspire focus, creativity, and collaboration. From hot desks to dedicated workstations, our coworking environment adapts to your workflow.</p>
+                </div>
+            </div>
+            <div class="masonry">
+                <div class="masonry-item" data-category="coworking">
+                    <img src="assets/images/kamgah1.jpg" alt="Coworking Space" loading="lazy">
+                    <div class="mi-overlay"><span>Open Coworking</span></div>
+                </div>
+                <div class="masonry-item" data-category="coworking">
+                    <img src="assets/images/main-offerings-bg.jpg" alt="Modern Workstations" loading="lazy">
+                    <div class="mi-overlay"><span>Modern Workstations</span></div>
+                </div>
+                <div class="masonry-item" data-category="coworking">
+                    <img src="assets/images/kamgah1.jfif" alt="Hot Desks" loading="lazy">
+                    <div class="mi-overlay"><span>Hot Desks</span></div>
+                </div>
+                <div class="masonry-item" data-category="coworking">
+                    <img src="assets/images/offerings-bg.png" alt="Dedicated Desks" loading="lazy">
+                    <div class="mi-overlay"><span>Dedicated Desks</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Private Offices ===== -->
+    <section class="gallery-section" data-category="private">
+        <div class="container">
+            <div class="gs-header">
+                <span class="gs-num">02</span>
+                <div>
+                    <h2>Private Offices</h2>
+                    <p>Fully serviced, lockable office spaces designed for teams and businesses that value privacy, security, and efficiency in a premium environment.</p>
+                </div>
+            </div>
+            <div class="masonry">
+                <div class="masonry-item" data-category="private">
+                    <img src="assets/images/main-offerings-bg.jpg" alt="Private Office" loading="lazy">
+                    <div class="mi-overlay"><span>Glass Cabins</span></div>
+                </div>
+                <div class="masonry-item" data-category="private">
+                    <img src="assets/images/offerings-bg.png" alt="Team Office" loading="lazy">
+                    <div class="mi-overlay"><span>Team Suites</span></div>
+                </div>
+                <div class="masonry-item" data-category="private">
+                    <img src="assets/images/kamgah1.jpg" alt="Lockable Office" loading="lazy">
+                    <div class="mi-overlay"><span>Lockable Spaces</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Meeting Rooms ===== -->
+    <section class="gallery-section" data-category="meetings">
+        <div class="container">
+            <div class="gs-header">
+                <span class="gs-num">03</span>
+                <div>
+                    <h2>Meeting Rooms</h2>
+                    <p>Modern, fully equipped meeting spaces for client presentations, team discussions, brainstorming sessions, and professional gatherings.</p>
+                </div>
+            </div>
+            <div class="masonry">
+                <div class="masonry-item" data-category="meetings">
+                    <img src="assets/images/meeting-rooms-bg.jpg" alt="Meeting Room" loading="lazy">
+                    <div class="mi-overlay"><span>Conference Table</span></div>
+                </div>
+                <div class="masonry-item" data-category="meetings">
+                    <img src="assets/images/meetingrooms2.jpg" alt="Conference Room" loading="lazy">
+                    <div class="mi-overlay"><span>Conference Room</span></div>
+                </div>
+                <div class="masonry-item" data-category="meetings">
+                    <img src="assets/images/meeting-rooms-bg.jpg" alt="Brainstorm Setup" loading="lazy">
+                    <div class="mi-overlay"><span>Presentation Setup</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Event Hall ===== -->
+    <section class="gallery-section" data-category="events">
+        <div class="container">
+            <div class="gs-header">
+                <span class="gs-num">04</span>
+                <div>
+                    <h2>Event &amp; Multipurpose Hall</h2>
+                    <p>A versatile and elegant space ideal for workshops, seminars, corporate events, product launches, and networking sessions.</p>
+                </div>
+            </div>
+            <div class="masonry">
+                <div class="masonry-item" data-category="events">
+                    <img src="assets/images/event-hall-bg.jpg" alt="Studio 68 Event Hall" loading="lazy">
+                    <div class="mi-overlay"><span>Studio '68</span></div>
+                </div>
+                <div class="masonry-item" data-category="events">
+                    <img src="assets/images/event-hall-bg.jpg" alt="Stage Setup" loading="lazy">
+                    <div class="mi-overlay"><span>Stage &amp; Lighting</span></div>
+                </div>
+                <div class="masonry-item" data-category="events">
+                    <img src="assets/images/main-offerings-bg.jpg" alt="Networking Setup" loading="lazy">
+                    <div class="mi-overlay"><span>Networking Sessions</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Café 68 & AraamGah ===== -->
+    <section class="gallery-section" data-category="lounge">
+        <div class="container">
+            <div class="gs-header">
+                <span class="gs-num">05</span>
+                <div>
+                    <h2>Café 68 &amp; AraamGah</h2>
+                    <p>Relax, recharge, and connect in our in-house café and pantry lounge designed for informal conversations and break-time comfort.</p>
+                </div>
+            </div>
+            <div class="masonry">
+                <div class="masonry-item" data-category="lounge">
+                    <img src="assets/images/cafe-bg.jpg" alt="Café 68" loading="lazy">
+                    <div class="mi-overlay"><span>Café '68 Counter</span></div>
+                </div>
+                <div class="masonry-item" data-category="lounge">
+                    <img src="assets/images/cafe-bg.jpg" alt="Lounge Seating" loading="lazy">
+                    <div class="mi-overlay"><span>AraamGah Lounge</span></div>
+                </div>
+                <div class="masonry-item" data-category="lounge">
+                    <img src="assets/images/cafe-bg.jpg" alt="Coffee Time" loading="lazy">
+                    <div class="mi-overlay"><span>Break-Time Comfort</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Reception ===== -->
+    <section class="gallery-section" data-category="reception">
+        <div class="container">
+            <div class="gs-header">
+                <span class="gs-num">06</span>
+                <div>
+                    <h2>Reception &amp; Common Areas</h2>
+                    <p>A premium first impression with a professionally managed reception and beautifully designed shared spaces that reflect the LABOURITES experience.</p>
+                </div>
+            </div>
+            <div class="masonry">
+                <div class="masonry-item" data-category="reception">
+                    <img src="assets/images/building.png" alt="Building Exterior" loading="lazy">
+                    <div class="mi-overlay"><span>Plaza #68 Entrance</span></div>
+                </div>
+                <div class="masonry-item" data-category="reception">
+                    <img src="assets/images/main-header-bg1.jpg" alt="Lobby" loading="lazy">
+                    <div class="mi-overlay"><span>Reception Desk</span></div>
+                </div>
+                <div class="masonry-item" data-category="reception">
+                    <img src="assets/images/main-header-bg.jpeg" alt="Common Area" loading="lazy">
+                    <div class="mi-overlay"><span>Common Areas</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Work Culture Moments ===== -->
+    <section class="gallery-section" data-category="moments">
+        <div class="container">
+            <div class="gs-header">
+                <span class="gs-num">07</span>
+                <div>
+                    <h2>Work Culture Moments</h2>
+                    <p>Snapshots of collaboration, networking, productivity, and community building at LABOURITES.</p>
+                </div>
+            </div>
+            <div class="masonry">
+                <div class="masonry-item" data-category="moments">
+                    <img src="assets/images/kamgah1.jpg" alt="Collaboration" loading="lazy">
+                    <div class="mi-overlay"><span>Collaboration</span></div>
+                </div>
+                <div class="masonry-item" data-category="moments">
+                    <img src="assets/images/event-hall-bg.jpg" alt="Networking Event" loading="lazy">
+                    <div class="mi-overlay"><span>Networking</span></div>
+                </div>
+                <div class="masonry-item" data-category="moments">
+                    <img src="assets/images/meeting-rooms-bg.jpg" alt="Workshop" loading="lazy">
+                    <div class="mi-overlay"><span>Workshops</span></div>
+                </div>
+                <div class="masonry-item" data-category="moments">
+                    <img src="assets/images/cafe-bg.jpg" alt="Community" loading="lazy">
+                    <div class="mi-overlay"><span>Community</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Quote -->
+    <section class="gallery-quote">
+        <div class="container">
+            <blockquote>
+                <i class="fas fa-quote-left"></i>
+                <p>More than a workspace — LABOURITES is where ideas grow, businesses scale, and communities connect.</p>
+            </blockquote>
+            <div class="gq-cta">
+                <a href="index.html#contact" class="btn-cta-light">Book a Tour <i class="fas fa-arrow-right"></i></a>
+                <a href="about.html" class="btn-cta-ghost">Learn About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lb-close" aria-label="Close"><i class="fas fa-times"></i></button>
+        <button class="lb-nav lb-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <button class="lb-nav lb-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+        <div class="lb-stage">
+            <img src="" alt="" id="lb-image">
+            <div class="lb-caption" id="lb-caption"></div>
+            <div class="lb-counter" id="lb-counter"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-col">
+            <h3 class="logo-text">LABOURITES</h3>
+            <p>Grow Your Business – 40+ Individual <br>Workspaces and Team Offices.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Contact us</h4>
+            <p><a href="mailto:info.labourites@gmail.com" class="social-link">info.labourites@gmail.com</a></p>
+            <p><a href="tel:+923338643068" class="social-link">+92-3338643068</a></p>
+            <p><a href="tel:+923151537220" class="social-link">+92-3151537220</a></p>
+        </div>
+        <div class="footer-col">
+            <h4>Follow us</h4>
+            <p><a href="https://www.facebook.com/share/1Lo2MB2ZCA/" class="social-link" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f social-icon"></i> Facebook</a></p>
+            <p><a href="https://www.linkedin.com/company/labourites-co-working-space/" class="social-link" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in social-icon"></i> LinkedIn</a></p>
+            <p><a href="https://www.instagram.com/labourites.coworking" class="social-link" target="_blank" rel="noopener"><i class="fa-brands fa-instagram social-icon"></i> Instagram</a></p>
+        </div>
+        <div class="footer-col">
+            <h4>Address</h4>
+            <p><a href="https://maps.app.goo.gl/P947mp1ArXs4jzXK9" class="social-link" target="_blank" rel="noopener">Plazza #68, 26-A Lavendar Road, Sector-H Commercial, DHA-2, Islamabad.</a></p>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>Copyright © 2026 LABOURITES.</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Gallery filter
+        document.addEventListener('DOMContentLoaded', () => {
+            const pills = document.querySelectorAll('.gf-pill');
+            const sections = document.querySelectorAll('.gallery-section');
+            pills.forEach(pill => {
+                pill.addEventListener('click', () => {
+                    pills.forEach(p => p.classList.remove('active'));
+                    pill.classList.add('active');
+                    const filter = pill.getAttribute('data-filter');
+                    sections.forEach(sec => {
+                        if (filter === 'all' || sec.getAttribute('data-category') === filter) {
+                            sec.style.display = '';
+                        } else {
+                            sec.style.display = 'none';
+                        }
+                    });
+                    window.scrollTo({ top: window.scrollY, behavior: 'instant' });
+                });
+            });
+        });
+
+        // Lightbox
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = Array.from(document.querySelectorAll('.masonry-item'));
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lb-image');
+            const lbCap = document.getElementById('lb-caption');
+            const lbCounter = document.getElementById('lb-counter');
+            const closeBtn = lb.querySelector('.lb-close');
+            const prevBtn = lb.querySelector('.lb-prev');
+            const nextBtn = lb.querySelector('.lb-next');
+            let currentIndex = 0;
+
+            const open = (idx) => {
+                currentIndex = idx;
+                const item = items[idx];
+                const img = item.querySelector('img');
+                const cap = item.querySelector('.mi-overlay span');
+                lbImg.src = img.src;
+                lbImg.alt = img.alt || '';
+                lbCap.textContent = cap ? cap.textContent : '';
+                lbCounter.textContent = (idx + 1) + ' / ' + items.length;
+                lb.classList.add('active');
+                lb.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const close = () => {
+                lb.classList.remove('active');
+                lb.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            };
+
+            const next = () => open((currentIndex + 1) % items.length);
+            const prev = () => open((currentIndex - 1 + items.length) % items.length);
+
+            items.forEach((item, idx) => {
+                item.addEventListener('click', () => open(idx));
+            });
+            closeBtn.addEventListener('click', close);
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+            lb.addEventListener('click', (e) => { if (e.target === lb || e.target.classList.contains('lb-stage')) close(); });
+            document.addEventListener('keydown', (e) => {
+                if (!lb.classList.contains('active')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+        });
+    </script>
+</body>
+
+</html>
