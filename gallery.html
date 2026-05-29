@@ -15,7 +15,7 @@
 <body class="gallery-page">
 
     <!-- Navigation -->
-    <nav class="navbar gallery-nav">
+    <nav class="navbar scrolled">
         <div class="nav-container">
             <a href="index.html#home" class="logo">LABOURITES</a>
             <ul class="nav-links">
@@ -33,10 +33,10 @@
     </nav>
 
     <!-- Hero -->
-    <header class="gallery-hero">
-        <div class="gh-bg"></div>
-        <div class="gh-content">
-            <nav class="breadcrumb gh-breadcrumb">
+    <header class="gp-hero">
+        <div class="gp-hero-overlay"></div>
+        <div class="gp-hero-content">
+            <nav class="breadcrumb">
                 <a href="index.html">Home</a>
                 <i class="fas fa-chevron-right"></i>
                 <span>Gallery</span>
@@ -45,232 +45,244 @@
             <h1>The <span>Gallery</span></h1>
             <p>Explore our thoughtfully designed spaces where productivity meets comfort, collaboration, and innovation. Every corner of LABOURITES reflects a premium work culture built for modern professionals.</p>
         </div>
-        <div class="gh-watermark">68</div>
+        <div class="gp-hero-watermark">68</div>
     </header>
 
-    <!-- Category Filter Pills -->
-    <div class="gallery-filter-wrap">
+    <!-- Filter Pills -->
+    <div class="gp-filter-bar">
         <div class="container">
-            <div class="gallery-filters">
-                <button class="gf-pill active" data-filter="all">All</button>
-                <button class="gf-pill" data-filter="coworking">Coworking</button>
-                <button class="gf-pill" data-filter="private">Private Offices</button>
-                <button class="gf-pill" data-filter="meetings">Meeting Rooms</button>
-                <button class="gf-pill" data-filter="events">Event Hall</button>
-                <button class="gf-pill" data-filter="lounge">Café 68 &amp; AraamGah</button>
-                <button class="gf-pill" data-filter="reception">Reception</button>
-                <button class="gf-pill" data-filter="moments">Work Culture</button>
+            <div class="gp-filters">
+                <button class="gp-pill active" data-filter="all">All</button>
+                <button class="gp-pill" data-filter="coworking">Coworking</button>
+                <button class="gp-pill" data-filter="private">Private Offices</button>
+                <button class="gp-pill" data-filter="meetings">Meeting Rooms</button>
+                <button class="gp-pill" data-filter="events">Event Hall</button>
+                <button class="gp-pill" data-filter="lounge">Café 68 &amp; AraamGah</button>
+                <button class="gp-pill" data-filter="reception">Reception</button>
+                <button class="gp-pill" data-filter="moments">Work Culture</button>
             </div>
         </div>
     </div>
 
     <!-- ===== Coworking Spaces ===== -->
-    <section class="gallery-section" data-category="coworking">
+    <section class="gp-section" data-category="coworking">
         <div class="container">
-            <div class="gs-header">
-                <span class="gs-num">01</span>
-                <div>
-                    <h2>Coworking Spaces</h2>
+            <div class="gp-section-head">
+                <div class="gp-section-num">01</div>
+                <div class="gp-section-text">
+                    <span class="section-tag"><i class="fas fa-laptop"></i> Coworking</span>
+                    <h2>Coworking <span class="accent">Spaces</span></h2>
                     <p>Dynamic and flexible work areas designed to inspire focus, creativity, and collaboration. From hot desks to dedicated workstations, our coworking environment adapts to your workflow.</p>
                 </div>
             </div>
-            <div class="masonry">
-                <div class="masonry-item" data-category="coworking">
-                    <img src="assets/images/kamgah1.jpg" alt="Coworking Space" loading="lazy">
-                    <div class="mi-overlay"><span>Open Coworking</span></div>
-                </div>
-                <div class="masonry-item" data-category="coworking">
+            <div class="gp-mosaic gp-mosaic-a">
+                <figure class="gp-tile">
+                    <img src="assets/images/kamgah1.jpg" alt="Open Coworking" loading="lazy">
+                    <figcaption><span>Open Coworking</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
                     <img src="assets/images/main-offerings-bg.jpg" alt="Modern Workstations" loading="lazy">
-                    <div class="mi-overlay"><span>Modern Workstations</span></div>
-                </div>
-                <div class="masonry-item" data-category="coworking">
+                    <figcaption><span>Modern Workstations</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
                     <img src="assets/images/kamgah1.jfif" alt="Hot Desks" loading="lazy">
-                    <div class="mi-overlay"><span>Hot Desks</span></div>
-                </div>
-                <div class="masonry-item" data-category="coworking">
+                    <figcaption><span>Hot Desks</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
                     <img src="assets/images/offerings-bg.png" alt="Dedicated Desks" loading="lazy">
-                    <div class="mi-overlay"><span>Dedicated Desks</span></div>
-                </div>
+                    <figcaption><span>Dedicated Desks</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
     <!-- ===== Private Offices ===== -->
-    <section class="gallery-section" data-category="private">
+    <section class="gp-section gp-section-alt" data-category="private">
         <div class="container">
-            <div class="gs-header">
-                <span class="gs-num">02</span>
-                <div>
-                    <h2>Private Offices</h2>
+            <div class="gp-section-head">
+                <div class="gp-section-num">02</div>
+                <div class="gp-section-text">
+                    <span class="section-tag"><i class="fas fa-door-closed"></i> Private</span>
+                    <h2>Private <span class="accent">Offices</span></h2>
                     <p>Fully serviced, lockable office spaces designed for teams and businesses that value privacy, security, and efficiency in a premium environment.</p>
                 </div>
             </div>
-            <div class="masonry">
-                <div class="masonry-item" data-category="private">
-                    <img src="assets/images/main-offerings-bg.jpg" alt="Private Office" loading="lazy">
-                    <div class="mi-overlay"><span>Glass Cabins</span></div>
-                </div>
-                <div class="masonry-item" data-category="private">
-                    <img src="assets/images/offerings-bg.png" alt="Team Office" loading="lazy">
-                    <div class="mi-overlay"><span>Team Suites</span></div>
-                </div>
-                <div class="masonry-item" data-category="private">
-                    <img src="assets/images/kamgah1.jpg" alt="Lockable Office" loading="lazy">
-                    <div class="mi-overlay"><span>Lockable Spaces</span></div>
-                </div>
+            <div class="gp-mosaic gp-mosaic-b">
+                <figure class="gp-tile">
+                    <img src="assets/images/main-offerings-bg.jpg" alt="Glass Cabins" loading="lazy">
+                    <figcaption><span>Glass Cabins</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/offerings-bg.png" alt="Team Suites" loading="lazy">
+                    <figcaption><span>Team Suites</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/kamgah1.jpg" alt="Lockable Spaces" loading="lazy">
+                    <figcaption><span>Lockable Spaces</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
     <!-- ===== Meeting Rooms ===== -->
-    <section class="gallery-section" data-category="meetings">
+    <section class="gp-section" data-category="meetings">
         <div class="container">
-            <div class="gs-header">
-                <span class="gs-num">03</span>
-                <div>
-                    <h2>Meeting Rooms</h2>
+            <div class="gp-section-head">
+                <div class="gp-section-num">03</div>
+                <div class="gp-section-text">
+                    <span class="section-tag"><i class="fas fa-people-group"></i> Meetings</span>
+                    <h2>Meeting <span class="accent">Rooms</span></h2>
                     <p>Modern, fully equipped meeting spaces for client presentations, team discussions, brainstorming sessions, and professional gatherings.</p>
                 </div>
             </div>
-            <div class="masonry">
-                <div class="masonry-item" data-category="meetings">
-                    <img src="assets/images/meeting-rooms-bg.jpg" alt="Meeting Room" loading="lazy">
-                    <div class="mi-overlay"><span>Conference Table</span></div>
-                </div>
-                <div class="masonry-item" data-category="meetings">
+            <div class="gp-mosaic gp-mosaic-b">
+                <figure class="gp-tile">
+                    <img src="assets/images/meeting-rooms-bg.jpg" alt="Conference Table" loading="lazy">
+                    <figcaption><span>Conference Table</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
                     <img src="assets/images/meetingrooms2.jpg" alt="Conference Room" loading="lazy">
-                    <div class="mi-overlay"><span>Conference Room</span></div>
-                </div>
-                <div class="masonry-item" data-category="meetings">
-                    <img src="assets/images/meeting-rooms-bg.jpg" alt="Brainstorm Setup" loading="lazy">
-                    <div class="mi-overlay"><span>Presentation Setup</span></div>
-                </div>
+                    <figcaption><span>Conference Room</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/meeting-rooms-bg.jpg" alt="Presentation Setup" loading="lazy">
+                    <figcaption><span>Presentation Setup</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
     <!-- ===== Event Hall ===== -->
-    <section class="gallery-section" data-category="events">
+    <section class="gp-section gp-section-alt" data-category="events">
         <div class="container">
-            <div class="gs-header">
-                <span class="gs-num">04</span>
-                <div>
-                    <h2>Event &amp; Multipurpose Hall</h2>
+            <div class="gp-section-head">
+                <div class="gp-section-num">04</div>
+                <div class="gp-section-text">
+                    <span class="section-tag"><i class="fas fa-champagne-glasses"></i> Events</span>
+                    <h2>Event &amp; <span class="accent">Multipurpose Hall</span></h2>
                     <p>A versatile and elegant space ideal for workshops, seminars, corporate events, product launches, and networking sessions.</p>
                 </div>
             </div>
-            <div class="masonry">
-                <div class="masonry-item" data-category="events">
-                    <img src="assets/images/event-hall-bg.jpg" alt="Studio 68 Event Hall" loading="lazy">
-                    <div class="mi-overlay"><span>Studio '68</span></div>
-                </div>
-                <div class="masonry-item" data-category="events">
+            <div class="gp-mosaic gp-mosaic-a">
+                <figure class="gp-tile">
+                    <img src="assets/images/event-hall-bg.jpg" alt="Studio '68" loading="lazy">
+                    <figcaption><span>Studio '68</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
                     <img src="assets/images/event-hall-bg.jpg" alt="Stage Setup" loading="lazy">
-                    <div class="mi-overlay"><span>Stage &amp; Lighting</span></div>
-                </div>
-                <div class="masonry-item" data-category="events">
-                    <img src="assets/images/main-offerings-bg.jpg" alt="Networking Setup" loading="lazy">
-                    <div class="mi-overlay"><span>Networking Sessions</span></div>
-                </div>
+                    <figcaption><span>Stage &amp; Lighting</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/main-offerings-bg.jpg" alt="Networking" loading="lazy">
+                    <figcaption><span>Networking Sessions</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/event-hall-bg.jpg" alt="Workshop" loading="lazy">
+                    <figcaption><span>Workshops</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
     <!-- ===== Café 68 & AraamGah ===== -->
-    <section class="gallery-section" data-category="lounge">
+    <section class="gp-section" data-category="lounge">
         <div class="container">
-            <div class="gs-header">
-                <span class="gs-num">05</span>
-                <div>
-                    <h2>Café 68 &amp; AraamGah</h2>
+            <div class="gp-section-head">
+                <div class="gp-section-num">05</div>
+                <div class="gp-section-text">
+                    <span class="section-tag"><i class="fas fa-mug-hot"></i> Hospitality</span>
+                    <h2>Café 68 &amp; <span class="accent">AraamGah</span></h2>
                     <p>Relax, recharge, and connect in our in-house café and pantry lounge designed for informal conversations and break-time comfort.</p>
                 </div>
             </div>
-            <div class="masonry">
-                <div class="masonry-item" data-category="lounge">
-                    <img src="assets/images/cafe-bg.jpg" alt="Café 68" loading="lazy">
-                    <div class="mi-overlay"><span>Café '68 Counter</span></div>
-                </div>
-                <div class="masonry-item" data-category="lounge">
-                    <img src="assets/images/cafe-bg.jpg" alt="Lounge Seating" loading="lazy">
-                    <div class="mi-overlay"><span>AraamGah Lounge</span></div>
-                </div>
-                <div class="masonry-item" data-category="lounge">
-                    <img src="assets/images/cafe-bg.jpg" alt="Coffee Time" loading="lazy">
-                    <div class="mi-overlay"><span>Break-Time Comfort</span></div>
-                </div>
+            <div class="gp-mosaic gp-mosaic-b">
+                <figure class="gp-tile">
+                    <img src="assets/images/cafe-bg.jpg" alt="Café 68 Counter" loading="lazy">
+                    <figcaption><span>Café '68 Counter</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/cafe-bg.jpg" alt="AraamGah Lounge" loading="lazy">
+                    <figcaption><span>AraamGah Lounge</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/cafe-bg.jpg" alt="Break-Time Comfort" loading="lazy">
+                    <figcaption><span>Break-Time Comfort</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
     <!-- ===== Reception ===== -->
-    <section class="gallery-section" data-category="reception">
+    <section class="gp-section gp-section-alt" data-category="reception">
         <div class="container">
-            <div class="gs-header">
-                <span class="gs-num">06</span>
-                <div>
-                    <h2>Reception &amp; Common Areas</h2>
+            <div class="gp-section-head">
+                <div class="gp-section-num">06</div>
+                <div class="gp-section-text">
+                    <span class="section-tag"><i class="fas fa-bell-concierge"></i> First Impression</span>
+                    <h2>Reception &amp; <span class="accent">Common Areas</span></h2>
                     <p>A premium first impression with a professionally managed reception and beautifully designed shared spaces that reflect the LABOURITES experience.</p>
                 </div>
             </div>
-            <div class="masonry">
-                <div class="masonry-item" data-category="reception">
-                    <img src="assets/images/building.png" alt="Building Exterior" loading="lazy">
-                    <div class="mi-overlay"><span>Plaza #68 Entrance</span></div>
-                </div>
-                <div class="masonry-item" data-category="reception">
-                    <img src="assets/images/main-header-bg1.jpg" alt="Lobby" loading="lazy">
-                    <div class="mi-overlay"><span>Reception Desk</span></div>
-                </div>
-                <div class="masonry-item" data-category="reception">
+            <div class="gp-mosaic gp-mosaic-b">
+                <figure class="gp-tile">
+                    <img src="assets/images/building.png" alt="Plaza #68 Entrance" loading="lazy">
+                    <figcaption><span>Plaza #68 Entrance</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/main-header-bg1.jpg" alt="Reception Desk" loading="lazy">
+                    <figcaption><span>Reception Desk</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
                     <img src="assets/images/main-header-bg.jpeg" alt="Common Area" loading="lazy">
-                    <div class="mi-overlay"><span>Common Areas</span></div>
-                </div>
+                    <figcaption><span>Common Areas</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
-    <!-- ===== Work Culture Moments ===== -->
-    <section class="gallery-section" data-category="moments">
+    <!-- ===== Work Culture ===== -->
+    <section class="gp-section" data-category="moments">
         <div class="container">
-            <div class="gs-header">
-                <span class="gs-num">07</span>
-                <div>
-                    <h2>Work Culture Moments</h2>
+            <div class="gp-section-head">
+                <div class="gp-section-num">07</div>
+                <div class="gp-section-text">
+                    <span class="section-tag"><i class="fas fa-people-arrows"></i> Community</span>
+                    <h2>Work Culture <span class="accent">Moments</span></h2>
                     <p>Snapshots of collaboration, networking, productivity, and community building at LABOURITES.</p>
                 </div>
             </div>
-            <div class="masonry">
-                <div class="masonry-item" data-category="moments">
+            <div class="gp-mosaic gp-mosaic-a">
+                <figure class="gp-tile">
                     <img src="assets/images/kamgah1.jpg" alt="Collaboration" loading="lazy">
-                    <div class="mi-overlay"><span>Collaboration</span></div>
-                </div>
-                <div class="masonry-item" data-category="moments">
-                    <img src="assets/images/event-hall-bg.jpg" alt="Networking Event" loading="lazy">
-                    <div class="mi-overlay"><span>Networking</span></div>
-                </div>
-                <div class="masonry-item" data-category="moments">
-                    <img src="assets/images/meeting-rooms-bg.jpg" alt="Workshop" loading="lazy">
-                    <div class="mi-overlay"><span>Workshops</span></div>
-                </div>
-                <div class="masonry-item" data-category="moments">
+                    <figcaption><span>Collaboration</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/event-hall-bg.jpg" alt="Networking" loading="lazy">
+                    <figcaption><span>Networking</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
+                    <img src="assets/images/meeting-rooms-bg.jpg" alt="Workshops" loading="lazy">
+                    <figcaption><span>Workshops</span></figcaption>
+                </figure>
+                <figure class="gp-tile">
                     <img src="assets/images/cafe-bg.jpg" alt="Community" loading="lazy">
-                    <div class="mi-overlay"><span>Community</span></div>
-                </div>
+                    <figcaption><span>Community</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
-    <!-- Closing Quote -->
-    <section class="gallery-quote">
+    <!-- Closing CTA -->
+    <section class="gp-cta">
         <div class="container">
-            <blockquote>
-                <i class="fas fa-quote-left"></i>
-                <p>More than a workspace — LABOURITES is where ideas grow, businesses scale, and communities connect.</p>
-            </blockquote>
-            <div class="gq-cta">
-                <a href="index.html#contact" class="btn-cta-light">Book a Tour <i class="fas fa-arrow-right"></i></a>
-                <a href="about.html" class="btn-cta-ghost">Learn About Us</a>
+            <div class="gp-cta-card">
+                <span class="section-tag"><i class="fas fa-quote-left"></i> Why LABOURITES</span>
+                <h2>More than a workspace — <br><span class="accent">a place where ideas grow.</span></h2>
+                <p>LABOURITES is where ideas grow, businesses scale, and communities connect. Come experience it for yourself.</p>
+                <div class="gp-cta-buttons">
+                    <a href="index.html#contact" class="btn-cta-light">Book a Tour <i class="fas fa-arrow-right"></i></a>
+                    <a href="about.html" class="btn-cta-ghost">Learn About Us</a>
+                </div>
             </div>
         </div>
     </section>
@@ -316,30 +328,25 @@
 
     <script src="script.js"></script>
     <script>
-        // Gallery filter
+        // Filter pills
         document.addEventListener('DOMContentLoaded', () => {
-            const pills = document.querySelectorAll('.gf-pill');
-            const sections = document.querySelectorAll('.gallery-section');
+            const pills = document.querySelectorAll('.gp-pill');
+            const sections = document.querySelectorAll('.gp-section');
             pills.forEach(pill => {
                 pill.addEventListener('click', () => {
                     pills.forEach(p => p.classList.remove('active'));
                     pill.classList.add('active');
                     const filter = pill.getAttribute('data-filter');
                     sections.forEach(sec => {
-                        if (filter === 'all' || sec.getAttribute('data-category') === filter) {
-                            sec.style.display = '';
-                        } else {
-                            sec.style.display = 'none';
-                        }
+                        sec.style.display = (filter === 'all' || sec.getAttribute('data-category') === filter) ? '' : 'none';
                     });
-                    window.scrollTo({ top: window.scrollY, behavior: 'instant' });
                 });
             });
         });
 
         // Lightbox
         document.addEventListener('DOMContentLoaded', () => {
-            const items = Array.from(document.querySelectorAll('.masonry-item'));
+            const items = Array.from(document.querySelectorAll('.gp-tile'));
             const lb = document.getElementById('lightbox');
             const lbImg = document.getElementById('lb-image');
             const lbCap = document.getElementById('lb-caption');
@@ -353,7 +360,7 @@
                 currentIndex = idx;
                 const item = items[idx];
                 const img = item.querySelector('img');
-                const cap = item.querySelector('.mi-overlay span');
+                const cap = item.querySelector('figcaption span');
                 lbImg.src = img.src;
                 lbImg.alt = img.alt || '';
                 lbCap.textContent = cap ? cap.textContent : '';
@@ -362,19 +369,15 @@
                 lb.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
             };
-
             const close = () => {
                 lb.classList.remove('active');
                 lb.setAttribute('aria-hidden', 'true');
                 document.body.style.overflow = '';
             };
-
             const next = () => open((currentIndex + 1) % items.length);
             const prev = () => open((currentIndex - 1 + items.length) % items.length);
 
-            items.forEach((item, idx) => {
-                item.addEventListener('click', () => open(idx));
-            });
+            items.forEach((item, idx) => item.addEventListener('click', () => open(idx)));
             closeBtn.addEventListener('click', close);
             nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
             prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
