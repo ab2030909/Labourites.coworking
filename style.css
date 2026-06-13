@@ -4346,18 +4346,15 @@ body.modal-open {
 }
 
 .upd-badge {
-    position: absolute;
-    top: 14px;
-    left: 14px;
+    display: inline-block;
     background: var(--primary-color);
     color: var(--white);
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    padding: 6px 12px;
+    padding: 5px 12px;
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(156, 13, 40, 0.3);
 }
 
 /* category color variations */
@@ -4372,6 +4369,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     flex: 1;
+    gap: 8px;
 }
 
 .upd-card-date {
@@ -4466,25 +4464,25 @@ body.modal-open {
     min-height: 60vh;
 }
 
-/* Wide container — sidebar LEFT, content RIGHT */
+/* Wide container — content LEFT, sidebar RIGHT */
 .upd-detail-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 80px;
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 320px;
+    gap: 80px;
     align-items: start;
 }
 
-/* Left sidebar comes first in grid */
-.upd-detail-sidebar {
+/* Left: main content */
+.upd-detail-main {
     grid-column: 1;
     grid-row: 1;
 }
 
-/* Right: main content */
-.upd-detail-main {
+/* Right sidebar comes second in grid */
+.upd-detail-sidebar {
     grid-column: 2;
     grid-row: 1;
 }
@@ -5170,6 +5168,48 @@ body.modal-open {
 }
 
 .admin-preview-grid img { max-width: 90px; height: 90px; object-fit: cover; }
+
+/* Removable image wrapper */
+.admin-img-removable {
+    position: relative;
+    display: inline-block;
+}
+
+.admin-img-removable img {
+    max-width: 140px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #f0e0e3;
+    display: block;
+}
+
+.admin-img-remove {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--white);
+    font-size: 0.9rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background 0.2s ease, transform 0.2s ease;
+    padding: 0;
+    font-family: inherit;
+}
+
+.admin-img-remove:hover {
+    background: #7d0a20;
+    transform: scale(1.15);
+}
 
 /* ---- Toggle ---- */
 .admin-toggle {

@@ -296,21 +296,30 @@ async function initAdminForm() {
         try {
             // Upload cover image if a new one is selected
             let coverUrl = existing ? existing.cover_image_url : null;
+
+            // Check if cover was removed
+            if (document.getElementById('cover-removed')?.value === 'true') {
+                coverUrl = null;
+            }
+
             const coverFile = form.cover_image.files[0];
             if (coverFile) {
                 btn.textContent = 'Uploading cover…';
                 coverUrl = await uploadImageViaApi(coverFile);
             }
 
-            // Upload gallery images
-            let gallery = existing && Array.isArray(existing.gallery_images)
-                ? existing.gallery_images.slice() : [];
+            // Gallery: start from kept images (those not removed)
+            const keptGallery = Array.from(
+                document.querySelectorAll('.admin-gallery-kept-url')
+            ).map(el => el.value);
+
+            // Upload any new gallery files
             const galleryFiles = form.gallery_images.files;
             if (galleryFiles && galleryFiles.length) {
                 btn.textContent = 'Uploading gallery…';
                 for (const f of galleryFiles) {
                     const url = await uploadImageViaApi(f);
-                    gallery.push(url);
+                    keptGallery.push(url);
                 }
             }
 
@@ -325,7 +334,7 @@ async function initAdminForm() {
                 update_date:       form.update_date.value || null,
                 venue:             form.venue.value.trim() || null,
                 cover_image_url:   coverUrl,
-                gallery_images:    gallery,
+                gallery_images:    keptGallery,
                 is_published:      form.is_published.checked
             };
 
@@ -363,15 +372,32 @@ function fillForm(form, u) {
     form.venue.value             = u.venue || '';
     form.is_published.checked    = !!u.is_published;
 
+    // Cover preview with remove button
     const coverPrev = document.getElementById('cover-preview');
     if (coverPrev && u.cover_image_url) {
-        coverPrev.innerHTML = `<img src="${adminEsc(u.cover_image_url)}" alt="current cover">
-            <span class="admin-prev-label">Current cover</span>`;
+        coverPrev.innerHTML = `
+            <div class="admin-img-removable">
+                <img src="${adminEsc(u.cover_image_url)}" alt="current cover">
+                <button type="button" class="admin-img-remove" title="Remove cover image"
+                    onclick="
+                        this.closest('.admin-img-removable').remove();
+                        document.getElementById('cover-removed').value='true';
+                    ">×</button>
+                <span class="admin-prev-label">Current cover</span>
+            </div>
+            <input type="hidden" id="cover-removed" value="false">`;
     }
+
+    // Gallery previews with individual remove buttons
     const galPrev = document.getElementById('gallery-preview');
     if (galPrev && Array.isArray(u.gallery_images) && u.gallery_images.length) {
-        galPrev.innerHTML = u.gallery_images
-            .map(src => `<img src="${adminEsc(src)}" alt="gallery image">`).join('');
+        galPrev.innerHTML = u.gallery_images.map((src, i) => `
+            <div class="admin-img-removable">
+                <img src="${adminEsc(src)}" alt="gallery image">
+                <button type="button" class="admin-img-remove" title="Remove this image"
+                    onclick="this.closest('.admin-img-removable').remove()">×</button>
+                <input type="hidden" class="admin-gallery-kept-url" value="${adminEsc(src)}">
+            </div>`).join('');
     }
 
     const heading = document.getElementById('form-heading');

@@ -86,9 +86,9 @@ function renderCard(u) {
     <article class="upd-card">
         <a class="upd-card-media" href="update-details.html?slug=${encodeURIComponent(u.slug)}">
             ${cover}
-            ${u.category ? `<span class="upd-badge ${categoryClass(u.category)}">${esc(u.category)}</span>` : ''}
         </a>
         <div class="upd-card-body">
+            ${u.category ? `<span class="upd-badge ${categoryClass(u.category)}">${esc(u.category)}</span>` : ''}
             ${dateStr ? `<span class="upd-card-date"><i class="far fa-calendar"></i> ${esc(dateStr)}</span>` : ''}
             <h3 class="upd-card-title">${esc(u.title)}</h3>
             ${u.short_description ? `<p class="upd-card-desc">${esc(u.short_description)}</p>` : ''}
