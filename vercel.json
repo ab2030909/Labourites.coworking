@@ -1,5 +1,18 @@
 {
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [
+        { "source": "/index.html",            "destination": "/",                  "permanent": true },
+        { "source": "/about.html",            "destination": "/about",             "permanent": true },
+        { "source": "/gallery.html",          "destination": "/gallery",           "permanent": true },
+        { "source": "/events-updates.html",   "destination": "/events-updates",    "permanent": true },
+        { "source": "/update-details.html",   "destination": "/update-details",    "permanent": true },
+        { "source": "/admin/login.html",      "destination": "/admin/login",       "permanent": true },
+        { "source": "/admin/dashboard.html",  "destination": "/admin/dashboard",   "permanent": true },
+        { "source": "/admin/add-update.html", "destination": "/admin/add-update",  "permanent": true },
+        { "source": "/admin/edit-update.html","destination": "/admin/edit-update", "permanent": true }
+    ],
     "rewrites": [
-        { "source": "/api/(.*)", "destination": "/api/$1" }
+        { "source": "/api/:path*", "destination": "/api/:path*" }
     ]
 }
