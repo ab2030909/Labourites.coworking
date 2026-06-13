@@ -4274,22 +4274,22 @@ body.modal-open {
     background: var(--white);
 }
 
-/* ---- Grid: 2 big cards per row ---- */
+/* ---- Grid: 3 cards per row ---- */
 .updates-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
 }
 
 /* ---- Update card ---- */
 .upd-card {
     background: var(--white);
     border: 1px solid #f0e0e3;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 8px 28px rgba(156, 13, 40, 0.07);
+    box-shadow: 0 8px 24px rgba(156, 13, 40, 0.06);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     position: relative;
 }
@@ -4308,15 +4308,15 @@ body.modal-open {
 .upd-card:hover::before { transform: scaleX(1); }
 
 .upd-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 28px 60px rgba(156, 13, 40, 0.18);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(156, 13, 40, 0.16);
 }
 
-/* Square-ish cover image (1:1) */
+/* Original 16:10 cover image */
 .upd-card-media {
     position: relative;
     display: block;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     background: #fdf5f6;
 }
@@ -4326,11 +4326,11 @@ body.modal-open {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.7s ease;
+    transition: transform 0.6s ease;
 }
 
 .upd-card:hover .upd-card-media img {
-    transform: scale(1.08);
+    transform: scale(1.06);
 }
 
 .upd-card-noimg {
@@ -4341,23 +4341,23 @@ body.modal-open {
     justify-content: center;
     background: linear-gradient(135deg, var(--primary-light) 0%, #fbe2e7 100%);
     color: var(--primary-color);
-    font-size: 3.5rem;
-    opacity: 0.6;
+    font-size: 2.4rem;
+    opacity: 0.7;
 }
 
 .upd-badge {
     position: absolute;
-    top: 16px;
-    left: 16px;
+    top: 14px;
+    left: 14px;
     background: var(--primary-color);
     color: var(--white);
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    padding: 7px 14px;
+    padding: 6px 12px;
     border-radius: 20px;
-    box-shadow: 0 4px 14px rgba(156, 13, 40, 0.35);
+    box-shadow: 0 4px 12px rgba(156, 13, 40, 0.3);
 }
 
 /* category color variations */
@@ -4368,37 +4368,37 @@ body.modal-open {
 .upd-badge.cat-important-update { background: #7d2ab8; }
 
 .upd-card-body {
-    padding: 28px 28px 30px;
+    padding: 22px 22px 24px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
 .upd-card-date {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-light);
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .upd-card-date i { color: var(--primary-color); }
 
 .upd-card-title {
-    font-size: 1.45rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-dark);
     line-height: 1.3;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .upd-card-desc {
     color: var(--text-light);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 22px;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 18px;
     flex: 1;
 }
 
@@ -4407,20 +4407,13 @@ body.modal-open {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--primary-light);
     color: var(--primary-color);
     font-weight: 700;
-    font-size: 0.85rem;
-    padding: 10px 20px;
-    border-radius: 30px;
-    transition: background 0.3s ease, color 0.3s ease, gap 0.3s ease;
+    font-size: 0.88rem;
+    transition: gap 0.3s ease;
 }
 
-.upd-readmore:hover {
-    background: var(--primary-color);
-    color: var(--white);
-    gap: 12px;
-}
+.upd-readmore:hover { gap: 12px; }
 
 /* ---- States (loading / empty / error) ---- */
 .upd-state {
@@ -4473,19 +4466,28 @@ body.modal-open {
     min-height: 60vh;
 }
 
-/* Wide container — two-column on desktop */
+/* Wide container — sidebar LEFT, content RIGHT */
 .upd-detail-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 80px;
     display: grid;
-    grid-template-columns: 1fr 360px;
+    grid-template-columns: 300px 1fr;
     gap: 60px;
     align-items: start;
 }
 
-/* Left: main content */
-.upd-detail-main {}
+/* Left sidebar comes first in grid */
+.upd-detail-sidebar {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Right: main content */
+.upd-detail-main {
+    grid-column: 2;
+    grid-row: 1;
+}
 
 .upd-back {
     display: inline-flex;
@@ -4653,10 +4655,10 @@ body.modal-open {
 /* ---- Right sidebar ---- */
 .upd-detail-sidebar {
     position: sticky;
-    top: 100px;
+    top: 90px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .upd-sidebar-card {
@@ -4773,18 +4775,26 @@ body.modal-open {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .updates-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .updates-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
     .upd-detail-inner {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
         padding: 0 30px;
     }
-    .upd-detail-sidebar { position: static; }
+    .upd-detail-sidebar {
+        position: static;
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .upd-detail-main {
+        grid-column: 1;
+        grid-row: 1;
+    }
     .upd-detail-title { font-size: 2.2rem; }
 }
 
 @media (max-width: 600px) {
-    .updates-grid { grid-template-columns: 1fr; gap: 24px; }
+    .updates-grid { grid-template-columns: 1fr; gap: 20px; }
     .update-detail-wrap { padding: 80px 0 70px; }
     .upd-detail-inner { padding: 0 20px; }
     .upd-detail-title { font-size: 1.8rem; }
