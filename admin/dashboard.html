@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — LABOURITES Admin</title>
+    <meta name="robots" content="noindex">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../assets/images/Capture.PNG">
+</head>
+
+<body class="admin-page">
+
+    <!-- Admin Topbar -->
+    <header class="admin-topbar">
+        <a href="../index.html" class="admin-logo">LABOURITES <span>Admin</span></a>
+        <div class="admin-topbar-right">
+            <span class="admin-whoami"><i class="fas fa-user-circle"></i> <span id="admin-email">…</span></span>
+            <a href="#" class="admin-btn admin-btn-ghost" data-logout><i class="fas fa-right-from-bracket"></i> Logout</a>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="admin-page-head">
+            <div>
+                <h1>Events &amp; Updates</h1>
+                <p>Manage all your published and draft updates.</p>
+            </div>
+            <a href="add-update.html" class="admin-btn admin-btn-primary"><i class="fas fa-plus"></i> Add New Update</a>
+        </div>
+
+        <div id="dash-state" class="admin-state"></div>
+
+        <div id="dash-table-wrap" class="admin-table-wrap" style="display:none;">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="updates-tbody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabaseClient.js"></script>
+    <script src="../js/admin-updates.js"></script>
+</body>
+
+</html>

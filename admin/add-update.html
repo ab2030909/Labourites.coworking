@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Update — LABOURITES Admin</title>
+    <meta name="robots" content="noindex">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../assets/images/Capture.PNG">
+</head>
+
+<body class="admin-page">
+
+    <header class="admin-topbar">
+        <a href="../index.html" class="admin-logo">LABOURITES <span>Admin</span></a>
+        <div class="admin-topbar-right">
+            <a href="dashboard.html" class="admin-btn admin-btn-ghost"><i class="fas fa-arrow-left"></i> Dashboard</a>
+            <a href="#" class="admin-btn admin-btn-ghost" data-logout><i class="fas fa-right-from-bracket"></i> Logout</a>
+        </div>
+    </header>
+
+    <main class="admin-main admin-form-main">
+        <h1 id="form-heading">Add New Update</h1>
+
+        <form id="update-form" class="admin-form" autocomplete="off">
+            <div class="admin-field">
+                <label for="title">Title <span class="req">*</span></label>
+                <input type="text" id="title" name="title" placeholder="e.g. New Meeting Rooms Now Open" required>
+            </div>
+
+            <div class="admin-field">
+                <label for="slug">Slug <span class="req">*</span></label>
+                <input type="text" id="slug" name="slug" placeholder="auto-generated-from-title" required>
+                <small>Used in the URL: update-details.html?slug=<em>your-slug</em></small>
+            </div>
+
+            <div class="admin-grid-2">
+                <div class="admin-field">
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option value="">Select…</option>
+                        <option>Event</option>
+                        <option>Announcement</option>
+                        <option>Partnership</option>
+                        <option>Workspace Update</option>
+                        <option>Important Update</option>
+                    </select>
+                </div>
+                <div class="admin-field">
+                    <label for="update_date">Date</label>
+                    <input type="date" id="update_date" name="update_date">
+                </div>
+            </div>
+
+            <div class="admin-field">
+                <label for="venue">Venue <small>(optional)</small></label>
+                <input type="text" id="venue" name="venue" placeholder="e.g. Studio '68, DHA Phase 2">
+            </div>
+
+            <div class="admin-field">
+                <label for="short_description">Short Description</label>
+                <textarea id="short_description" name="short_description" rows="2" placeholder="A one or two line summary shown on the cards."></textarea>
+            </div>
+
+            <div class="admin-field">
+                <label for="full_description">Full Description</label>
+                <textarea id="full_description" name="full_description" rows="8" placeholder="The full content. Leave a blank line between paragraphs."></textarea>
+            </div>
+
+            <div class="admin-field">
+                <label for="cover_image">Cover Image</label>
+                <input type="file" id="cover_image" name="cover_image" accept="image/*">
+                <div id="cover-preview" class="admin-preview"></div>
+            </div>
+
+            <div class="admin-field">
+                <label for="gallery_images">Gallery Images <small>(optional, select multiple)</small></label>
+                <input type="file" id="gallery_images" name="gallery_images" accept="image/*" multiple>
+                <div id="gallery-preview" class="admin-preview admin-preview-grid"></div>
+            </div>
+
+            <label class="admin-toggle">
+                <input type="checkbox" id="is_published" name="is_published">
+                <span class="admin-toggle-track"></span>
+                <span class="admin-toggle-label">Publish now (uncheck to save as draft)</span>
+            </label>
+
+            <div id="form-msg" class="admin-msg"></div>
+
+            <div class="admin-form-actions">
+                <a href="dashboard.html" class="admin-btn admin-btn-ghost">Cancel</a>
+                <button type="submit" class="admin-btn admin-btn-primary">Save Update</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabaseClient.js"></script>
+    <script src="../js/admin-updates.js"></script>
+</body>
+
+</html>

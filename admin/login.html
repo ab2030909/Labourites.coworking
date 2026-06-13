@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login — LABOURITES</title>
+    <meta name="robots" content="noindex">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../assets/images/Capture.PNG">
+</head>
+
+<body class="admin-page admin-login-page">
+
+    <div class="admin-login-card">
+        <a href="../index.html" class="admin-login-logo">LABOURITES</a>
+        <h1>Admin Login</h1>
+        <p class="admin-login-sub">Sign in to manage events &amp; updates.</p>
+
+        <form id="login-form" autocomplete="on">
+            <div class="admin-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="admin-field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+            </div>
+            <div id="login-msg" class="admin-msg"></div>
+            <button type="submit" class="admin-btn admin-btn-primary admin-btn-block">Sign In</button>
+        </form>
+
+        <a href="../index.html" class="admin-login-back"><i class="fas fa-arrow-left"></i> Back to website</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabaseClient.js"></script>
+    <script src="../js/admin-updates.js"></script>
+</body>
+
+</html>

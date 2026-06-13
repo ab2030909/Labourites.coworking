@@ -77,16 +77,13 @@ if (pricingSwitch) {
     });
 }
 
-// Supabase Configuration
-const SUPABASE_URL = 'https://jaldxqqplawmexwbpark.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImphbGR4cXFwbGF3bWV4d2JwYXJrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY2Nzg1NTIsImV4cCI6MjA5MjI1NDU1Mn0.d2H-P4i3xtsm2X0N9spJzyk3S652HAbZG0Us6GcHr9o';
-
-// Initialize Supabase Client
-let supabaseClient;
-if (typeof supabase !== 'undefined') {
-    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-} else {
-    console.error('Supabase library not loaded! Make sure the CDN script in index.html is working.');
+/*
+ * Supabase client is provided by js/supabaseClient.js (loaded before this file).
+ * That file defines the global `supabaseClient`. We reference it here so we
+ * don't duplicate the config in two places.
+ */
+if (typeof supabaseClient === 'undefined' || !supabaseClient) {
+    console.error('supabaseClient not found. Ensure js/supabaseClient.js is loaded before script.js');
 }
 
 // Form Submission Logic
