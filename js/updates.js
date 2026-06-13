@@ -159,23 +159,96 @@ function renderDetail(root, u) {
             : JSON.parse(u.gallery_images || '[]');
     } catch (e) { gallery = []; }
 
-    const metaBits = [];
-    if (dateStr) metaBits.push(`<span><i class="far fa-calendar"></i> ${esc(dateStr)}</span>`);
-    if (u.venue) metaBits.push(`<span><i class="fas fa-location-dot"></i> ${esc(u.venue)}</span>`);
-    if (u.category) metaBits.push(`<span class="upd-badge ${categoryClass(u.category)}">${esc(u.category)}</span>`);
+    // Build sidebar detail rows
+    const sidebarRows = [];
+    if (dateStr) sidebarRows.push(`
+        <div class="upd-sidebar-detail-row">
+            <i class="far fa-calendar"></i>
+            <div><strong>Date</strong><span>${esc(dateStr)}</span></div>
+        </div>`);
+    if (u.venue) sidebarRows.push(`
+        <div class="upd-sidebar-detail-row">
+            <i class="fas fa-location-dot"></i>
+            <div><strong>Venue</strong><span>${esc(u.venue)}</span></div>
+        </div>`);
+    if (u.category) sidebarRows.push(`
+        <div class="upd-sidebar-detail-row">
+            <i class="fas fa-tag"></i>
+            <div><strong>Category</strong><span>${esc(u.category)}</span></div>
+        </div>`);
 
     root.innerHTML = `
-        <a class="upd-back" href="events-updates.html"><i class="fas fa-arrow-left"></i> Back to Events &amp; Updates</a>
-        <h1 class="upd-detail-title">${esc(u.title)}</h1>
-        <div class="upd-detail-meta">${metaBits.join('')}</div>
-        ${u.cover_image_url ? `<div class="upd-detail-cover"><img src="${esc(u.cover_image_url)}" alt="${esc(u.title)}"></div>` : ''}
-        ${u.short_description ? `<p class="upd-detail-lead">${esc(u.short_description)}</p>` : ''}
-        <div class="upd-detail-content">${formatContent(u.full_description)}</div>
-        ${gallery.length ? `
-            <h2 class="upd-gallery-title">Gallery</h2>
-            <div class="upd-gallery">
-                ${gallery.map(src => `<a href="${esc(src)}" target="_blank" rel="noopener"><img src="${esc(src)}" alt="${esc(u.title)} image" loading="lazy"></a>`).join('')}
-            </div>` : ''}
+        <div class="upd-detail-inner">
+
+            <!-- LEFT: main content -->
+            <div class="upd-detail-main">
+                <a class="upd-back" href="events-updates.html">
+                    <i class="fas fa-arrow-left"></i> Back to Events &amp; Updates
+                </a>
+
+                ${u.category ? `<span class="upd-detail-category">
+                    <i class="fas fa-tag"></i> ${esc(u.category)}
+                </span>` : ''}
+
+                <h1 class="upd-detail-title">${esc(u.title)}</h1>
+
+                <div class="upd-detail-meta">
+                    ${dateStr ? `<div class="upd-detail-meta-item">
+                        <i class="far fa-calendar"></i> ${esc(dateStr)}
+                    </div>` : ''}
+                    ${u.venue ? `<div class="upd-detail-meta-item">
+                        <i class="fas fa-location-dot"></i> ${esc(u.venue)}
+                    </div>` : ''}
+                </div>
+
+                ${u.cover_image_url ? `
+                <div class="upd-detail-cover">
+                    <img src="${esc(u.cover_image_url)}" alt="${esc(u.title)}">
+                </div>` : ''}
+
+                ${u.short_description ? `
+                <p class="upd-detail-lead">${esc(u.short_description)}</p>` : ''}
+
+                <div class="upd-detail-content">${formatContent(u.full_description)}</div>
+
+                ${gallery.length ? `
+                <h2 class="upd-gallery-title">Gallery</h2>
+                <div class="upd-gallery">
+                    ${gallery.map(src => `
+                    <a href="${esc(src)}" target="_blank" rel="noopener">
+                        <img src="${esc(src)}" alt="${esc(u.title)} image" loading="lazy">
+                    </a>`).join('')}
+                </div>` : ''}
+            </div>
+
+            <!-- RIGHT: sticky sidebar -->
+            <aside class="upd-detail-sidebar">
+                ${sidebarRows.length ? `
+                <div class="upd-sidebar-card">
+                    <h4>Update Details</h4>
+                    ${sidebarRows.join('')}
+                </div>` : ''}
+
+                <div class="upd-sidebar-cta">
+                    <h4>Interested in our space?</h4>
+                    <p>Book a private tour and experience LABOURITES firsthand — no commitment required.</p>
+                    <a href="index.html#contact">Book a Tour <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="upd-sidebar-card">
+                    <h4>More Updates</h4>
+                    <div class="upd-sidebar-detail-row">
+                        <i class="fas fa-newspaper"></i>
+                        <div>
+                            <span><a href="events-updates.html" style="color:var(--primary-color);font-weight:700;">
+                                View all events &amp; announcements →
+                            </a></span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
     `;
 }
 
