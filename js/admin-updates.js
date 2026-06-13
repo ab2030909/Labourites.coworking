@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Admin logic — calls the /api/updates and /api/uploads Vercel functions
  * instead of Supabase directly. This completely bypasses RLS because the
  * API functions use the service role key server-side.
@@ -95,7 +95,7 @@ async function getSession() {
 async function requireAuth() {
     const session = await getSession();
     if (!session) {
-        window.location.replace('login.html');
+        window.location.replace('/admin/login');
         return null;
     }
     return session;
@@ -106,7 +106,7 @@ function wireLogout() {
         el.addEventListener('click', async (e) => {
             e.preventDefault();
             await supabaseClient.auth.signOut();
-            window.location.replace('login.html');
+            window.location.replace('/admin/login');
         });
     });
 }
@@ -121,7 +121,7 @@ function initAdminLogin() {
     const msg = document.getElementById('login-msg');
     const btn = form.querySelector('button[type="submit"]');
 
-    getSession().then(s => { if (s) window.location.replace('dashboard.html'); });
+    getSession().then(s => { if (s) window.location.replace('/admin/dashboard'); });
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -144,7 +144,7 @@ function initAdminLogin() {
                 password: form.password.value
             });
             if (error) throw error;
-            window.location.replace('dashboard.html');
+            window.location.replace('/admin/dashboard');
         } catch (err) {
             msg.textContent = err.message || 'Login failed.';
             msg.classList.add('error');
@@ -187,7 +187,7 @@ async function loadDashboard() {
             stateBox.innerHTML = `<i class="far fa-newspaper upd-state-icon"></i>
                 <h3>No updates yet</h3>
                 <p>Create your first update to get started.</p>
-                <a class="admin-btn admin-btn-primary" href="add-update.html"><i class="fas fa-plus"></i> Add New Update</a>`;
+                <a class="admin-btn admin-btn-primary" href="/admin/add-update"><i class="fas fa-plus"></i> Add New Update</a>`;
             return;
         }
 
@@ -220,7 +220,7 @@ function rowMarkup(u) {
         <td>${fmtAdminDate(u.update_date)}</td>
         <td>${status}</td>
         <td class="admin-row-actions">
-            <a class="admin-btn admin-btn-sm" href="edit-update.html?id=${encodeURIComponent(u.id)}">
+            <a class="admin-btn admin-btn-sm" href="/admin/edit-update?id=${encodeURIComponent(u.id)}">
                 <i class="fas fa-pen"></i> Edit</a>
             <button class="admin-btn admin-btn-sm admin-btn-danger"
                 data-delete="${adminEsc(u.id)}" data-title="${adminEsc(u.title)}">
@@ -347,7 +347,7 @@ async function initAdminForm() {
                 await apiPost('/updates', payload);
             }
 
-            window.location.replace('dashboard.html');
+            window.location.replace('/admin/dashboard');
 
         } catch (err) {
             let m = err.message || 'Failed to save.';

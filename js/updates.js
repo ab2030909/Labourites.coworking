@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Public "Events & Updates" logic.
  * - events-updates.html : lists all PUBLISHED updates as cards
  * - update-details.html : shows a single update by ?slug=...
@@ -84,7 +84,7 @@ function renderCard(u) {
 
     return `
     <article class="upd-card">
-        <a class="upd-card-media" href="update-details.html?slug=${encodeURIComponent(u.slug)}">
+        <a class="upd-card-media" href="/update-details?slug=${encodeURIComponent(u.slug)}">
             ${cover}
         </a>
         <div class="upd-card-body">
@@ -92,7 +92,7 @@ function renderCard(u) {
             ${dateStr ? `<span class="upd-card-date"><i class="far fa-calendar"></i> ${esc(dateStr)}</span>` : ''}
             <h3 class="upd-card-title">${esc(u.title)}</h3>
             ${u.short_description ? `<p class="upd-card-desc">${esc(u.short_description)}</p>` : ''}
-            <a class="upd-readmore" href="update-details.html?slug=${encodeURIComponent(u.slug)}">
+            <a class="upd-readmore" href="/update-details?slug=${encodeURIComponent(u.slug)}">
                 Read More <i class="fas fa-arrow-right"></i>
             </a>
         </div>
@@ -182,7 +182,7 @@ function renderDetail(root, u) {
 
             <!-- LEFT: main content -->
             <div class="upd-detail-main">
-                <a class="upd-back" href="events-updates.html">
+                <a class="upd-back" href="/events-updates">
                     <i class="fas fa-arrow-left"></i> Back to Events &amp; Updates
                 </a>
 
@@ -232,7 +232,7 @@ function renderDetail(root, u) {
                 <div class="upd-sidebar-cta">
                     <h4>Interested in our space?</h4>
                     <p>Book a private tour and experience LABOURITES firsthand — no commitment required.</p>
-                    <a href="index.html#contact">Book a Tour <i class="fas fa-arrow-right"></i></a>
+                    <a href="/#contact">Book a Tour <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="upd-sidebar-card">
@@ -240,7 +240,7 @@ function renderDetail(root, u) {
                     <div class="upd-sidebar-detail-row">
                         <i class="fas fa-newspaper"></i>
                         <div>
-                            <span><a href="events-updates.html" style="color:var(--primary-color);font-weight:700;">
+                            <span><a href="/events-updates" style="color:var(--primary-color);font-weight:700;">
                                 View all events &amp; announcements →
                             </a></span>
                         </div>
@@ -280,7 +280,7 @@ function notFoundState() {
         <i class="fas fa-circle-question upd-state-icon"></i>
         <h3>Update not found</h3>
         <p>The update you're looking for doesn't exist or may have been removed.</p>
-        <a class="btn-cta-light" href="events-updates.html">Back to Events &amp; Updates</a>
+        <a class="btn-cta-light" href="/events-updates">Back to Events &amp; Updates</a>
     </div>`;
 }
 function errorState(msg) {
