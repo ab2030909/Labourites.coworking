@@ -58,7 +58,7 @@ async function initUpdatesList() {
             .from('updates')
             .select('*')
             .eq('is_published', true)
-            .order('created_at', { ascending: false });
+            .order('update_date', { ascending: false, nullsFirst: false });
 
         if (error) throw error;
 
