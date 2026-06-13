@@ -1,0 +1,9 @@
+{
+    "name": "labourites-coworking",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "@supabase/supabase-js": "^2.0.0",
+        "busboy": "^1.6.0"
+    }
+}
