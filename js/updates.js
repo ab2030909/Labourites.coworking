@@ -297,3 +297,48 @@ document.addEventListener('DOMContentLoaded', () => {
     initUpdatesList();
     initUpdateDetails();
 });
+
+
+/* =====================================================================
+   HOMEPAGE PREVIEW  (index.html — shows latest 3 events)
+===================================================================== */
+async function initHomeEvents() {
+    const grid = document.getElementById('home-events-grid');
+    const stateBox = document.getElementById('home-events-state');
+    if (!grid) return; // not on homepage
+
+    if (!supabaseClient) return;
+
+    stateBox.innerHTML = loadingState('');
+    stateBox.style.display = '';
+
+    try {
+        const { data, error } = await supabaseClient
+            .from('updates')
+            .select('*')
+            .eq('is_published', true)
+            .order('update_date', { ascending: false, nullsFirst: false })
+            .limit(3);
+
+        if (error) throw error;
+
+        stateBox.style.display = 'none';
+
+        if (!data || data.length === 0) {
+            // Hide the whole section silently if no events yet
+            const section = document.getElementById('events-home');
+            if (section) section.style.display = 'none';
+            return;
+        }
+
+        grid.innerHTML = data.map(renderCard).join('');
+
+    } catch (err) {
+        console.error('Home events fetch failed:', err);
+        stateBox.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initHomeEvents();
+});

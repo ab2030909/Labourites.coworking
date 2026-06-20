@@ -73,7 +73,7 @@
             </div>
             <div class="feature">
                 <h3>Privacy, safety and<br>security</h3>
-                <p>We provide exclusive, dedicated Lockable Cabinet with each desk, workstation, and office.</p>
+                <p>We provide exclusive, dedicated Lockable Cabinet with each desk, workstation and office.</p>
             </div>
         </div>
     </section>
@@ -86,10 +86,10 @@
                 <button class="tab active" data-target="kaamgah1" data-bg="assets/images/kamgah1.jpg">KaamGah1</button>
                 <button class="tab" data-target="kaamgah2"
                     data-bg="assets/images/main-offerings-bg.jpg">KaamGah2</button>
-                <button class="tab" data-target="meeting-rooms" data-bg="assets/images/meeting-rooms-bg.jpg">Meeting
-                    rooms</button>
+                <button class="tab" data-target="meeting-rooms" data-bg="assets/images/meeting-rooms-bg.jpg">KalaamGah</button>
                 <button class="tab" data-target="studio-68" data-bg="assets/images/event-hall-bg.jpg">Studio 68</button>
                 <button class="tab" data-target="cafe-68" data-bg="assets/images/cafe-bg.jpg">Café 68</button>
+                <button class="tab" data-target="araamgah" data-bg="assets/images/main-header-bg1.jpg">AraamGah</button>
             </div>
 
                         <div class="tab-contents-wrapper">
@@ -135,18 +135,23 @@
 
                 <!-- Meeting Rooms Content -->
                 <div class="tab-content" id="meeting-rooms">
-                    <div class="cards cards-centered">
+                    <div class="cards cards-centered-3">
                         <div class="card" data-modal="meeting-rooms-modal">
                             <span class="card-label">Flexible plans</span>
-                            <h3>Meeting Rooms</h3>
-                            <p>Get a private and distraction-free environment for discussions and presentations to
-                                facilitate team collaboration.</p>
+                            <h3>Meeting Room</h3>
+                            <p>A private, distraction-free space for team discussions, client meetings, and presentations. Seating for up to 6 participants.</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <div class="card" data-modal="conference-room-modal">
+                            <span class="card-label">Flexible plans</span>
+                            <h3>Conference Room</h3>
+                            <p>A larger, fully equipped room for formal presentations, boardroom-style discussions, and client briefings with up to 15 participants.</p>
                             <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                         <div class="card" data-modal="focus-pod">
                             <span class="card-label">Flexible plans</span>
                             <h3>Focus Pod</h3>
-                            <p>A compact, private pod designed for focused one-on-one meetings, quick calls, and confidential conversations without interruption.</p>
+                            <p>A compact, private pod designed for focused one-on-one meetings, quick calls and confidential conversations without interruption.</p>
                             <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
@@ -171,9 +176,23 @@
                         <div class="card" data-modal="cafe-68-modal">
                             <span class="card-label">Relax while you work</span>
                             <h3>Cafe '68</h3>
-                            <p>State of the Art Coffee Shop to entertain your clients, guests, and colleagues. We
+                            <p>State of the Art Coffee Shop to entertain your clients, guests and colleagues. We
                                 offer discounted prices on all items for our members, so you enjoy productivity without
                                 worrying about budget!</p>
+                            <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AraamGah Content -->
+                <div class="tab-content" id="araamgah">
+                    <div class="cards cards-single">
+                        <div class="card" data-modal="araamgah-modal">
+                            <span class="card-label">Stay & recharge</span>
+                            <h3>AraamGah</h3>
+                            <p>A premium guest room for professionals and their clients visiting from outside the city.
+                                A fully furnished, self-contained space — your own private retreat right within
+                                LABOURITES.</p>
                             <button class="card-read-more">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
@@ -194,16 +213,16 @@
     <template id="modal-hot-desks">
         <span class="modal-label">Daily Plans - KaamGah1</span>
         <h2>Hot Desks</h2>
-        <p class="modal-intro">The perfect solution for professionals who need a great workspace without a long-term commitment. Show up, plug in, and get to work.</p>
+        <p class="modal-intro">The perfect solution for professionals who need a great workspace without a long-term commitment. Show up, plug in and get to work.</p>
         <div class="modal-features">
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Flexible daily booking - no long-term contract required</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Access to high-speed WiFi and LAN</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Ergonomic seating and well-lit, professional environment</span></div>
-            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Access to shared pantry, printing, and reception services</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Access to shared pantry, printing and reception services</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Discounted rates at Cafe '68 for all members</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Secure access and power backup included</span></div>
         </div>
-        <p class="modal-note">Ideal for freelancers, remote workers, and visiting professionals looking for a productive space by the day.</p>
+        <p class="modal-note">Ideal for freelancers, remote workers and visiting professionals looking for a productive space by the day.</p>
         <a href="#contact" class="modal-cta">Book a Tour <i class="fas fa-arrow-right"></i></a>
     </template>
 
@@ -226,16 +245,16 @@
     <template id="modal-private-offices">
         <span class="modal-label">Team Plans - KaamGah2</span>
         <h2>Private Offices</h2>
-        <p class="modal-intro">Fully enclosed, lockable private offices for teams that need focus, confidentiality, and a professional base of operations.</p>
+        <p class="modal-intro">Fully enclosed, lockable private offices for teams that need focus, confidentiality and a professional base of operations.</p>
         <div class="modal-features">
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Secure, lockable office with walls and doors</span></div>
-            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available for teams of 4, 6, 7, and 16 persons</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available for teams of 4, 6, 7 and 16 persons</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Customizable layout to suit your team's workflow</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Dedicated lockers and high-speed internet for every seat</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Business address and mail handling included</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Reception support and uninterrupted power backup</span></div>
         </div>
-        <p class="modal-note">Perfect for growing startups, established teams, and enterprises that need a private, professional space on flexible terms.</p>
+        <p class="modal-note">Perfect for growing startups, established teams and enterprises that need a private, professional space on flexible terms.</p>
         <a href="#contact" class="modal-cta">Book a Tour <i class="fas fa-arrow-right"></i></a>
     </template>
 
@@ -247,7 +266,7 @@
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Book for a single day or multiple days as needed</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Fully enclosed and private - no distractions</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed internet and power backup included</span></div>
-            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Suitable for team sprints, client visits, and workshops</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Suitable for team sprints, client visits and workshops</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Access to shared amenities and pantry services</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Offered upon request and availability</span></div>
         </div>
@@ -256,32 +275,88 @@
     </template>
 
     <template id="modal-meeting-rooms-modal">
-        <span class="modal-label">Flexible Plans - Meeting Rooms</span>
-        <h2>Meeting Rooms</h2>
-        <p class="modal-intro">Professional, distraction-free meeting rooms equipped with everything you need to run productive discussions, presentations, and client calls.</p>
+        <span class="modal-label">Flexible Plans - KalaamGah</span>
+        <h2>Meeting Room</h2>
+        <p class="modal-intro">Professional, distraction-free meeting rooms equipped with everything you need to run productive discussions, presentations and client calls.</p>
         <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Seating for up to 6 participants</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available for members and non-members by the hour</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed internet and display screen included</span></div>
-            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Whiteboard, markers, and stationery provided</span></div>
-            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Comfortable seating for up to 10 participants</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Whiteboard, markers and stationery provided</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Reception support and visitor management</span></div>
-            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Easy online booking with flexible time slots</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Easy booking with flexible time slots</span></div>
         </div>
-        <p class="modal-note">Ideal for client meetings, team reviews, interviews, and any professional gathering that demands a polished setting.</p>
+        <div class="modal-pricing">
+            <h4 class="modal-pricing-title"><i class="fas fa-tag"></i> Pricing</h4>
+            <div class="modal-pricing-row">
+                <span class="modal-pricing-label">Non-members</span>
+                <span class="modal-pricing-val">PKR 2,000 <small>/hr</small></span>
+                <span class="modal-pricing-note">Per hour</span>
+            </div>
+            <div class="modal-pricing-row modal-pricing-member">
+                <span class="modal-pricing-label">Members</span>
+                <span class="modal-pricing-val">Discounted rates</span>
+                <span class="modal-pricing-note">Contact us</span>
+            </div>
+        </div>
+        <p class="modal-note">Ideal for client meetings, team reviews, interviews and any professional gathering that demands a polished setting.</p>
         <a href="#contact" class="modal-cta">Book a Room <i class="fas fa-arrow-right"></i></a>
     </template>
 
+    <template id="modal-conference-room-modal">
+        <span class="modal-label">Flexible Plans - KalaamGah</span>
+        <h2>Conference Room</h2>
+        <p class="modal-intro">A fully equipped, boardroom-style conference room for formal presentations, executive briefings, and larger team gatherings — up to 15 participants.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Seating for up to 15 participants</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available for members and non-members by the hour</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed internet and display screen included</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Whiteboard, markers and stationery provided</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Comfortable ergonomic seating throughout</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Reception support and professional visitor management</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Ideal for investor meetings, training sessions and workshops</span></div>
+        </div>
+        <div class="modal-pricing">
+            <h4 class="modal-pricing-title"><i class="fas fa-tag"></i> Pricing</h4>
+            <div class="modal-pricing-row">
+                <span class="modal-pricing-label">Non-members</span>
+                <span class="modal-pricing-val">PKR 3,000 <small>/hr</small></span>
+                <span class="modal-pricing-note">Per hour</span>
+            </div>
+            <div class="modal-pricing-row modal-pricing-member">
+                <span class="modal-pricing-label">Members</span>
+                <span class="modal-pricing-val">Discounted rates</span>
+                <span class="modal-pricing-note">Contact us</span>
+            </div>
+        </div>
+        <p class="modal-note">When your meeting demands a more formal, professional setting — the Conference Room at LABOURITES delivers the right atmosphere for high-stakes conversations.</p>
+        <a href="#contact" class="modal-cta">Book Conference Room <i class="fas fa-arrow-right"></i></a>
+    </template>
+
     <template id="modal-focus-pod">
-        <span class="modal-label">Flexible Plans - Meeting Rooms</span>
+        <span class="modal-label">Flexible Plans - KalaamGah</span>
         <h2>Focus Pod</h2>
-        <p class="modal-intro">A compact, private pod designed for focused one-on-one meetings, quick calls, and confidential conversations without interruption.</p>
+        <p class="modal-intro">A compact, private pod designed for focused one-on-one meetings, quick calls and confidential conversations without interruption.</p>
         <div class="modal-features">
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Intimate setting for 1 person</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Soundproofed for complete privacy</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed WiFi and power outlets</span></div>
-            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Perfect for video calls, interviews, and brainstorming</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Perfect for video calls, interviews and brainstorming</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Bookable by the hour - members get priority access</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available to non-members based on availability</span></div>
+        </div>
+        <div class="modal-pricing">
+            <h4 class="modal-pricing-title"><i class="fas fa-tag"></i> Pricing</h4>
+            <div class="modal-pricing-row">
+                <span class="modal-pricing-label">Non-members</span>
+                <span class="modal-pricing-val">PKR 1,000 <small>/hr</small></span>
+                <span class="modal-pricing-note">Per hour</span>
+            </div>
+            <div class="modal-pricing-row modal-pricing-member">
+                <span class="modal-pricing-label">Members</span>
+                <span class="modal-pricing-val">Free</span>
+                <span class="modal-pricing-note">Complimentary access</span>
+            </div>
         </div>
         <p class="modal-note">When you need a quiet corner to think, plan, or connect - the Focus Pod delivers exactly that.</p>
         <a href="#contact" class="modal-cta">Book a Pod <i class="fas fa-arrow-right"></i></a>
@@ -293,11 +368,24 @@
         <p class="modal-intro">A premium multipurpose event hall built for corporate and social occasions. Whatever the event, Studio '68 delivers.</p>
         <div class="modal-features">
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Spacious hall suitable for upto 75 guests</span></div>
-            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Modern AV setup - projector, screen, and sound system</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Modern AV setup - projector, screen and sound system</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Flexible layout for seminars, launches and networking</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Catering coordination available through Cafe '68</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Dedicated event support staff on the day</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed internet and uninterrupted power throughout</span></div>
+        </div>
+        <div class="modal-pricing">
+            <h4 class="modal-pricing-title"><i class="fas fa-tag"></i> Pricing</h4>
+            <div class="modal-pricing-row">
+                <span class="modal-pricing-label">Normal Hours <small>(09:00 AM – 06:00 PM)</small></span>
+                <span class="modal-pricing-val">PKR 8,000 <small>/hr</small></span>
+                <span class="modal-pricing-note">Standard rate</span>
+            </div>
+            <div class="modal-pricing-row modal-pricing-peak">
+                <span class="modal-pricing-label">Peak Hours <small>(06:00 PM – 11:00 PM)</small></span>
+                <span class="modal-pricing-val">PKR 11,000 <small>/hr</small></span>
+                <span class="modal-pricing-note">Evening rate</span>
+            </div>
         </div>
         <p class="modal-note">From product launches and corporate workshops to private celebrations - Studio '68 is the venue that makes every event memorable.</p>
         <a href="#contact" class="modal-cta">Enquire Now <i class="fas fa-arrow-right"></i></a>
@@ -312,11 +400,43 @@
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Exclusive member discounts on all items</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Comfortable lounge seating for informal meetings</span></div>
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>WiFi available throughout the cafe area</span></div>
+                        <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Temporary Workstations towork with a sip of Coffee</span></div>          
             <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Catering services available for events at Studio '68</span></div>
-            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Open to members, guests, and walk-in visitors</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Open to members, guests and walk-in visitors</span></div>
         </div>
-        <p class="modal-note">More than just a cafe - it's where ideas flow, deals are made, and the LABOURITES community comes together.</p>
+        <p class="modal-note">More than just a cafe - it's where ideas flow, deals are made and the LABOURITES community comes together.</p>
         <a href="#contact" class="modal-cta">Visit Us <i class="fas fa-arrow-right"></i></a>
+    </template>
+
+    <template id="modal-araamgah-modal">
+        <span class="modal-label">Stay &amp; Recharge · AraamGah</span>
+        <h2>AraamGah</h2>
+        <p class="modal-intro">Pakistan's first coworking-attached guest room. AraamGah is a fully furnished, self-contained private room within LABOURITES — designed for professionals and their out-of-city clients who need a comfortable, premium place to rest without leaving the business hub.</p>
+        <div class="modal-features">
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Private room with attached bathroom, complete privacy guaranteed</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Air conditioned, cool and comfortable regardless of the season</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>LED TV for entertainment and relaxation after a long day</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Sofa seating area, ideal for informal in-room conversations</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Dedicated drawers and storage for personal belongings</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>High-speed WiFi and uninterrupted power backup included</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Access to Café '68 for meals, coffee and refreshments</span></div>
+            <div class="modal-feature-item"><i class="fas fa-check-circle"></i><span>Available for nightly or extended stays, flexible booking</span></div>
+        </div>
+        <div class="modal-pricing">
+            <h4 class="modal-pricing-title"><i class="fas fa-tag"></i> Pricing</h4>
+            <div class="modal-pricing-row">
+                <span class="modal-pricing-label">Non-members</span>
+                <span class="modal-pricing-val">PKR 11,000 <small>/night</small></span>
+                <span class="modal-pricing-note">Per night</span>
+            </div>
+            <div class="modal-pricing-row modal-pricing-member">
+                <span class="modal-pricing-label">Members</span>
+                <span class="modal-pricing-val">Discounted rates</span>
+                <span class="modal-pricing-note">Contact us</span>
+            </div>
+        </div>
+        <p class="modal-note">Perfect for LABOURITES members hosting visiting clients, business partners travelling to Islamabad, or anyone who wants a premium stay right inside a professional workspace environment — no hotel required.</p>
+        <a href="#contact" class="modal-cta">Book AraamGah <i class="fas fa-arrow-right"></i></a>
     </template>
 
     <!-- How to get started Section -->
@@ -340,7 +460,7 @@
                 <li>
                     <span class="step-icon"></span>
                     <p><strong>Visit Us.</strong> Schedule a visit to LABOURITES and experience firsthand information
-                        about amenities and features we offer. Meet our community, and see how our space can support
+                        about amenities and features we offer. Meet our community and see how our space can support
                         your needs and productivity.</p>
                 </li>
                 <li>
@@ -366,7 +486,7 @@
                     community to rent.</p>
                 <p>Our cutting-edge facilities and inspirational workspaces provide the perfect environment for
                     innovators,
-                    thinkers, entrepreneurs, and creatives to come together and build something special.</p>
+                    thinkers, entrepreneurs and creatives to come together and build something special.</p>
                 <a href="/about" class="btn btn-primary-light">About Us</a>
             </div>
             <div class="about-image">
@@ -606,6 +726,31 @@
         </div>
     </section>
 
+    <!-- Latest Events & Updates Section -->
+    <section class="home-events" id="events-home">
+        <div class="container">
+            <div class="home-events-header">
+                <div>
+                    <span class="section-tag"><i class="fas fa-newspaper"></i> Latest Updates</span>
+                    <h2>Events &amp; <span class="accent">Updates</span></h2>
+                    <p>Stay in the loop with the latest from LABOURITES — events, announcements and workspace news.</p>
+                </div>
+                <a href="/events-updates" class="btn-cta-light home-events-viewall">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div id="home-events-state"></div>
+            <div id="home-events-grid" class="updates-grid"></div>
+
+            <div class="home-events-footer">
+                <a href="/events-updates" class="btn-cta-light">
+                    See All Events &amp; Updates <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
@@ -635,7 +780,7 @@
                         </button>
                         <div class="faq-answer open">
                             <div class="faq-answer-inner">
-                                <p>LABOURITES is a premium coworking and business address in Islamabad, designed for professionals, entrepreneurs, and enterprises seeking a refined, productive, and fully supported workspace environment.</p>
+                                <p>LABOURITES is a premium coworking and business address in Islamabad, designed for professionals, entrepreneurs and enterprises seeking a refined, productive and fully supported workspace environment.</p>
                             </div>
                         </div>
                     </div>
@@ -665,7 +810,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                <p>We provide a curated range of workspace solutions including Hot Desks, Dedicated Desks, Private Offices, Day Offices, Virtual Offices, Meeting Rooms, and Event Spaces — each designed with flexibility and professionalism in mind.</p>
+                                <p>We provide a curated range of workspace solutions including Hot Desks, Dedicated Desks, Private Offices, Day Offices, Virtual Offices, Meeting Rooms and Event Spaces — each designed with flexibility and professionalism in mind.</p>
                             </div>
                         </div>
                     </div>
@@ -680,7 +825,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                <p>Yes. We encourage prospective members to schedule a private tour to experience our environment, facilities, and services firsthand before making a decision.</p>
+                                <p>Yes. We encourage prospective members to schedule a private tour to experience our environment, facilities and services firsthand before making a decision.</p>
                             </div>
                         </div>
                     </div>
@@ -695,7 +840,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                <p>Our membership plans are designed with flexibility in mind, offering daily, monthly, and long-term options to accommodate evolving business requirements.</p>
+                                <p>Our membership plans are designed with flexibility in mind, offering daily, monthly and long-term options to accommodate evolving business requirements.</p>
                             </div>
                         </div>
                     </div>
@@ -710,7 +855,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                <p>Members enjoy access to high-speed business-grade internet, uninterrupted power backup, meeting facilities, ergonomic workstations, pantry services, reception support, and secure access systems.</p>
+                                <p>Members enjoy access to high-speed business-grade internet, uninterrupted power backup, meeting facilities, ergonomic workstations, pantry services, reception support and secure access systems.</p>
                             </div>
                         </div>
                     </div>
@@ -725,7 +870,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                <p>Absolutely. LABOURITES is designed to support freelancers, startups, remote professionals, and scaling businesses seeking a prestigious and efficient working environment.</p>
+                                <p>Absolutely. LABOURITES is designed to support freelancers, startups, remote professionals and scaling businesses seeking a prestigious and efficient working environment.</p>
                             </div>
                         </div>
                     </div>
@@ -740,7 +885,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                <p>Yes. Our fully serviced private offices provide secure, lockable, and customizable spaces for teams requiring privacy, focus, and operational efficiency.</p>
+                                <p>Yes. Our fully serviced private offices provide secure, lockable and customizable spaces for teams requiring privacy, focus and operational efficiency.</p>
                             </div>
                         </div>
                     </div>
@@ -785,7 +930,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                <p>Yes. LABOURITES offers a premium multipurpose event hall designed for corporate gatherings, workshops, seminars, product launches, networking sessions, and private events. The space is fully supported with modern amenities, making it suitable for both professional and social occasions.</p>
+                                <p>Yes. LABOURITES offers a premium multipurpose event hall designed for corporate gatherings, workshops, seminars, product launches, networking sessions and private events. The space is fully supported with modern amenities, making it suitable for both professional and social occasions.</p>
                             </div>
                         </div>
                     </div>
@@ -810,7 +955,7 @@
     <footer class="footer">
         <div class="footer-col">
             <h3 class="logo-text">LABOURITES</h3>
-            <p>Pakistan's First Purpose-Built Vertical Coworking Space in DHA Phase 2, Islamabad — Designed for Privacy, Focus, and Business Growth.</p>
+            <p>Pakistan's First Purpose-Built Vertical Coworking Space in DHA Phase 2, Islamabad — Designed for Privacy, Focus and Business Growth.</p>
         </div>
         <div class="footer-col">
             <h4>Contact us</h4>
@@ -840,6 +985,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabaseClient.js"></script>
+    <script src="js/updates.js"></script>
     <script src="script.js"></script>
 
 </body>
